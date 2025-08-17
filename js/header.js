@@ -28,6 +28,8 @@ window.addEventListener('click', function () {
 
 function searchFilter(item, sessionStorageItemName, selectCarDetail) {
   sessionStorage.setItem(sessionStorageItemName, item.textContent);
+  console.log(sessionStorage);
+
   if (window.location.href.search('category.html') !== -1) {
     setFilter(sessionStorageItemName, selectCarDetail);
   } else {
@@ -35,20 +37,18 @@ function searchFilter(item, sessionStorageItemName, selectCarDetail) {
   };
 };
 
-function filterOnclick(item, sessionStorageItemName) {
-  item.onclick = function () {
-    searchFilter(item, sessionStorageItemName, selectCarDetail);
-  };
-};
-
 const typeFilter = document.querySelectorAll('.search__filters > div:first-child > div > span');
 typeFilter.forEach(function (type) {
-  filterOnclick(type, 'carType', '.notover-products-box__deception p');
+  type.onclick = function () {
+    searchFilter(type, 'carType', '.notover-products-box__deception p');
+  };
 });
 
 const capacityFilter = document.querySelectorAll('.search__filters > div:nth-child(2) > div > span');
 capacityFilter.forEach(function (type) {
-  filterOnclick(type, 'carCapacity', '.notover-products-box__products div:nth-child(3)');
+  type.onclick = function () {
+    searchFilter(type, 'carCapacity', '.notover-products-box__products div:nth-child(3)');
+  };
 });
 
 
