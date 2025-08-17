@@ -22,11 +22,17 @@
 
 /* font css */
 
+/* Backdrop */
+.backdrop {
+    background: rgba(11, 11, 11, 0.8);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
 
-
-/* font css */
-
-
+/* Backdrop */
 
 /* background color */
 
@@ -371,6 +377,8 @@ input[id=dark]:checked+.continer .menu__title label {
     justify-content: center;
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    position: relative;
 
 }
 
@@ -414,7 +422,7 @@ input[id=dark]:checked+.continer .menu__title label {
 
     position: relative;
 
-    padding-left: 80px;
+    margin-left: 80px;
 
     align-items: center;
 
@@ -456,7 +464,52 @@ input[id=dark]:checked+.continer .menu__title label {
 
 }
 
+.search__filters {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 87px;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
 
+.search__filters>div {
+    margin-top: 25px;
+}
+
+.search__filters div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search__filters>div>div {
+    width: 70%;
+}
+
+.search__filters>div>span {
+    color: #8FA3BE;
+    font-weight: 600;
+}
+
+.search__filters div>span {
+    width: calc(30% - 15px);
+}
+
+.search__filters>div>div>span {
+    cursor: pointer;
+    width: calc(33% - 15px);
+}
+
+.search__filters input {
+    width: 100%;
+    padding: 9px;
+    box-sizing: border-box;
+    border-radius: 11px;
+}
 
 .search-mobile {
 
@@ -808,6 +861,9 @@ input[id=mobile-menu]:checked+.mobile-menu {
 
 }
 
+.search__filters>div>div>span:hover {
+    color: #3563EA;
+}
 
 
 /* end  header hover */
@@ -7648,7 +7704,7 @@ input[type=tel] {
 
 }
 
-@media only screen and (max-width:598px)  {
+@media only screen and (max-width:598px) {
 
     .payment-rent-form__title span {
 
