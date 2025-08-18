@@ -92,11 +92,48 @@
 
           <div class="search">
 
-            <img src="img/settings.png">
+            <img src="img/settings.png" class="search__filter">
 
-            <img src="img/search.png" style="left: 100px;">
+            <img src="img/search.png" style="left: 15px;">
 
             <input type="search" placeholder="Search something here">
+
+            <div id="search__filters" class="search__filters" style="display: none;">
+              <div>
+                <span> TYPE :</span>
+                <div>
+                  <span> Sport </span>
+                  <span> SUV </span>
+                  <span> MPV </span>
+                  <span> Sedan </span>
+                  <span> Coupe </span>
+                  <span> Hatchback </span>
+                </div>
+              </div>
+
+              <div>
+                <span> CAPACITY :</span>
+                <div>
+                  <span> 2 Person </span>
+                  <span> 4 Person </span>
+                  <span> 6 Person </span>
+                  <span> 8 or More </span>
+                </div>
+              </div>
+
+              <div>
+                <span> PRICE :</span>
+                <div>
+                  <div style="width: 100%;">
+                    <input type="text" placeholder="From" id="search__filters--min">
+                  </div>
+                  <div style="width: 100%;">
+                    <input type="text" placeholder="To" id="search__filters--max">
+                  </div>
+                </div>
+              </div>
+
+            </div>
 
           </div>
 
@@ -108,7 +145,7 @@
 
           <input type="search" placeholder="Search something here">
 
-          <img src="img/settings.png">
+          <img src="img/settings.png" class="search__filter">
 
         </div>
 
@@ -128,11 +165,53 @@
 
         </div>
 
+        <div id="mobile-search__filters" class="search__filters"
+          style="display: none; top: 217px; width: calc(100% - 30px);left: 14px;">
+          <div>
+            <span> TYPE :</span>
+            <div>
+              <span> Sport </span>
+              <span> SUV </span>
+              <span> MPV </span>
+              <span> Sedan </span>
+              <span> Coupe </span>
+              <span> Hatchback </span>
+            </div>
+          </div>
+
+          <div>
+            <span> CAPACITY :</span>
+            <div>
+              <span> 2 Person </span>
+              <span> 4 Person </span>
+              <span> 6 Person </span>
+              <span> 8 or More </span>
+            </div>
+          </div>
+
+          <div>
+            <span> PRICE :</span>
+            <div>
+              <div style="width: 100%;">
+                <input type="text" placeholder="From" id="mobile-search__filters--min">
+              </div>
+              <div style="width: 100%;">
+                <input type="text" placeholder="To" id="mobile-search__filters--max">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </header>
 
     </div>
 
     <!-- end header -->
+
+    <!-- Start backdrop -->
+    <div class="backdrop" id="backdrop" style="display: none;"></div>
+    <!-- End backdrop -->
 
 
 
