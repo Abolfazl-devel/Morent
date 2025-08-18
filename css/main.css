@@ -484,6 +484,7 @@ input[id=dark]:checked+.continer .menu__title label {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
+    min-width: 303px;
 }
 
 .search__filters>div>div {
