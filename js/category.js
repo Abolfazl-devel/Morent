@@ -15,7 +15,6 @@ if (sessionStorage.getItem('minPrice') !== null) {
   const maxPriceFilter = sessionStorage.getItem('maxPrice')
 
   for (let i = 0; i < productsPrice.length; i++) {
-    console.log(productsPrice[i].textContent.replaceAll(/\D+/g, ''));
     if (!(Number(productsPrice[i].textContent.replaceAll(/\D+/g, '')) >= Number(minPriceFilter) && Number(productsPrice[i].textContent.replaceAll(/\D+/g, '')) <= Number(maxPriceFilter))) {
       productsPrice[i].parentElement.parentElement.parentElement.style.display = 'none';
     };

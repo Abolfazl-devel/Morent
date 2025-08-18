@@ -9,26 +9,37 @@ import { setFilter } from "./search-filter.js";
 // Set search filter
 
 // Search filter
-const desktopSearchFilterBut = document.getElementById('search__filter');
-const desktopSearchFilter = document.getElementById('search__filters');
-desktopSearchFilterBut.onclick = function (event) {
-  event.stopPropagation();
-  backdrop.style.display = 'block';
-  desktopSearchFilter.style.display = 'block';
+
+function closeHeaderPops(searchFilterBox) {
+  backdrop.style.display = 'none';
+  searchFilterBox.style.display = 'none';
 };
 
-desktopSearchFilter.onclick = function (event) {
-  event.stopPropagation();
-};
+const searchFilterBut = document.querySelectorAll('.search__filter');
+const searchFilterBox = document.querySelectorAll('.search__filters');
+searchFilterBut.forEach(function (but, index) {
+  but.onclick = function (event) {
+    if (searchFilterBox[index].style.display == 'none') {
+      event.stopPropagation();
+      backdrop.style.display = 'block';
+      searchFilterBox[index].style.display = 'block';
+    };
+  };
+});
+
+searchFilterBox.forEach(function (box) {
+  box.onclick = function (event) {
+    event.stopPropagation();
+  };
+});
 
 window.addEventListener('click', function () {
-  backdrop.style.display = 'none';
-  desktopSearchFilter.style.display = 'none';
+  closeHeaderPops(searchFilterBox[0]);
+  closeHeaderPops(searchFilterBox[1]);
 });
 
 function searchFilter(item, sessionStorageItemName, selectCarDetail) {
   sessionStorage.setItem(sessionStorageItemName, item.textContent);
-  console.log(sessionStorage);
 
   if (window.location.href.search('category.html') !== -1) {
     setFilter(sessionStorageItemName, selectCarDetail);
@@ -53,12 +64,21 @@ capacityFilter.forEach(function (type) {
 
 
 window.addEventListener('keydown', function (key) {
-  if (key.key == 'Enter' && desktopSearchFilter.style.display == 'block') {
-    const minPriceFilterElement = document.getElementById('search__filters--min');
-    const maxPriceFilterElement = document.getElementById('search__filters--max');
-    sessionStorage.setItem('minPrice', minPriceFilterElement.value.replace(/\D+/g, ''));
-    sessionStorage.setItem('maxPrice', maxPriceFilterElement.value.replace(/\D+/g, ''));
-    this.location.href = 'category.html';
+  if (key.key == 'Enter') {
+    function sendInputs(selectMinprice, selectMaxPrice) {
+      const minPriceFilterElement = document.getElementById(selectMinprice);
+      const maxPriceFilterElement = document.getElementById(selectMaxPrice);
+      sessionStorage.clear();
+      sessionStorage.setItem('minPrice', minPriceFilterElement.value.replace(/\D+/g, ''));
+      sessionStorage.setItem('maxPrice', maxPriceFilterElement.value.replace(/\D+/g, ''));
+      window.location.href = 'category.html';
+    };
+
+    if (searchFilterBox[0].style.display == 'block') {
+      sendInputs('search__filters--min', 'search__filters--max');
+    } else if (searchFilterBox[1].style.display == 'block') {
+      sendInputs('mobile-search__filters--min', 'mobile-search__filters--max');
+    };
   };
 });
 // Search filter
