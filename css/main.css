@@ -489,6 +489,7 @@ input[id=dark]:checked+.continer .menu__title label {
 
 .search__filters>div>div {
     width: 70%;
+    min-width: 303px;
 }
 
 .search__filters>div>span {
@@ -503,6 +504,7 @@ input[id=dark]:checked+.continer .menu__title label {
 .search__filters>div>div>span {
     cursor: pointer;
     width: calc(33% - 15px);
+    min-width: 84px;
 }
 
 .search__filters input {
@@ -923,6 +925,22 @@ input[id=mobile-menu]:checked+.mobile-menu {
 
     }
 
+}
+
+@media only screen and (max-width:427px) {
+    .search__filters div > span {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:373px) {
+    .search__filters>div>div>span {
+        font-size: 12px;
+        width: calc(50% - 15px);
+    }
+    .search__filters div > span {
+        width: 100%;
+    }
 }
 
 
