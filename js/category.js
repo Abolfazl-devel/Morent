@@ -20,5 +20,4 @@ if (sessionStorage.getItem('minPrice') !== null) {
     };
   };
 };
-sessionStorage.clear();
 // Get filter

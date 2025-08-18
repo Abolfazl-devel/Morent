@@ -39,8 +39,8 @@ window.addEventListener('click', function () {
 });
 
 function searchFilter(item, sessionStorageItemName, selectCarDetail) {
+  sessionStorage.clear();
   sessionStorage.setItem(sessionStorageItemName, item.textContent);
-
   if (window.location.href.search('category.html') !== -1) {
     setFilter(sessionStorageItemName, selectCarDetail);
   } else {
