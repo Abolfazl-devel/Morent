@@ -81,4 +81,22 @@ window.addEventListener('keydown', function (key) {
     };
   };
 });
+
+window.addEventListener('resize', function () {
+  let deviceSize = window.innerWidth;
+  searchFilterBox.forEach(function (box) {
+    if (box.style.display == 'block') {
+      function responsiveMode(displayType1, displayType2) {
+        searchFilterBox[1].style.display = displayType1;
+        searchFilterBox[0].style.display = displayType2;
+        return;
+      };
+      if (deviceSize > 973) {
+        responsiveMode('none', 'block');
+      } else {
+        responsiveMode('block', 'none');
+      };
+    };
+  });
+});
 // Search filter
