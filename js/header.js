@@ -58,7 +58,7 @@ typeFilter.forEach(function (type) {
 const capacityFilter = document.querySelectorAll('.search__filters > div:nth-child(2) > div > span');
 capacityFilter.forEach(function (type) {
   type.onclick = function () {
-    searchFilter(type, 'carCapacity', '.notover-products-box__products div:nth-child(3)');
+    searchFilter(type, 'carCapacity', '.notover-products-box__product--info div:nth-child(3) span');
   };
 });
 
