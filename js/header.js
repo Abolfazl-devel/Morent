@@ -14,6 +14,8 @@ function closeHeaderPops(searchFilterBox) {
   backdrop.style.display = 'none';
   searchFilterBox.style.display = 'none';
   wishlist.style.display = 'none';
+  notificattion.style.transform = 'scale(0)';
+  allTxtParent.style.transform = 'scale(0)';
 };
 
 const searchFilterBut = document.querySelectorAll('.search__filter');
@@ -193,3 +195,51 @@ closeWishlist.onclick = function () {
   closeHeaderPops(searchFilterBox[1]);
 };
 // Wishlist
+
+// Notfications
+const notificattionBut = document.getElementById('icon-menu__notifs--but');
+const notificattion = document.getElementById('icon-menu__notifs');
+notificattionBut.onclick = function (event) {
+  event.stopPropagation();
+  if (notificattion.style.transform == 'scale(0)') {
+    closeHeaderPops(searchFilterBox[0]);
+    closeHeaderPops(searchFilterBox[1]);
+    notificattion.style.transform = 'scale(1)';
+    backdrop.style.display = 'block';
+  } else {
+    closeHeaderPops(searchFilterBox[0]);
+    closeHeaderPops(searchFilterBox[1]);
+  };
+};
+
+notificattion.onclick = function (event) {
+  event.stopPropagation();
+};
+
+const closeNotfication = document.getElementById('icon-menu__notifs--close');
+closeNotfication.onclick = function () {
+  closeHeaderPops(searchFilterBox[0]);
+  closeHeaderPops(searchFilterBox[1]);
+};
+
+const notficationTitle = document.getElementById('icon-menu__notifs--title');
+const summary = document.getElementById('icon-menu__notifs--txt');
+notficationTitle.onclick = function () {
+  summary.style.display = 'block';
+};
+
+const closeP = document.getElementById('p__close');
+const allTxtParent = document.getElementById('p-Parent');
+closeP.onclick = function () {
+  allTxtParent.style.transform = 'scale(0)';
+};
+
+const readMoreNotfication = document.getElementById('notifs--txt__read-more');
+readMoreNotfication.onclick = function () {
+  closeHeaderPops(searchFilterBox[0]);
+  closeHeaderPops(searchFilterBox[1]);
+  allTxtParent.style.transform = 'scale(1)';
+  backdrop.style.display = 'block';
+  summary.style.display = 'none';
+};
+// Notfications
