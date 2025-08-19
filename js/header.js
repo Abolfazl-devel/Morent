@@ -52,6 +52,7 @@ const typeFilter = document.querySelectorAll('.search__filters > div:first-child
 typeFilter.forEach(function (type) {
   type.onclick = function () {
     searchFilter(type, 'carType', '.notover-products-box__deception p');
+    postMessage({ type: 'SEND_DATA', data: 'setfilter' }, 'http://localhost');
   };
 });
 
@@ -59,6 +60,7 @@ const capacityFilter = document.querySelectorAll('.search__filters > div:nth-chi
 capacityFilter.forEach(function (type) {
   type.onclick = function () {
     searchFilter(type, 'carCapacity', '.notover-products-box__product--info div:nth-child(3) span');
+    postMessage({ type: 'SEND_DATA', data: 'setfilter' }, 'http://localhost');
   };
 });
 
@@ -76,8 +78,10 @@ window.addEventListener('keydown', function (key) {
 
     if (searchFilterBox[0].style.display == 'block') {
       sendInputs('search__filters--min', 'search__filters--max');
+      postMessage({ type: 'SEND_DATA', data: 'setfilter' }, 'http://localhost');
     } else if (searchFilterBox[1].style.display == 'block') {
       sendInputs('mobile-search__filters--min', 'mobile-search__filters--max');
+      postMessage({ type: 'SEND_DATA', data: 'setfilter' }, 'http://localhost');
     };
   };
 });
