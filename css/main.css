@@ -928,7 +928,7 @@ input[id=mobile-menu]:checked+.mobile-menu {
 }
 
 @media only screen and (max-width:427px) {
-    .search__filters div > span {
+    .search__filters div>span {
         width: 100%;
     }
 }
@@ -938,7 +938,8 @@ input[id=mobile-menu]:checked+.mobile-menu {
         font-size: 12px;
         width: calc(50% - 15px);
     }
-    .search__filters div > span {
+
+    .search__filters div>span {
         width: 100%;
     }
 }
@@ -2097,6 +2098,8 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 
     padding-top: 18px;
 
+    gap: 18px;
+
 }
 
 
@@ -2129,13 +2132,11 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 
     background-color: #fff;
 
-    margin-right: 18px;
-
     padding: 20px;
 
     border-radius: 15px;
 
-    width: 32%;
+    width: calc(33% - 18px);
 
     box-sizing: border-box;
 

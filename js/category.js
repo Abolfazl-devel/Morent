@@ -34,8 +34,6 @@ function getFilter() {
 getFilter();
 
 window.addEventListener('message', (event) => {
-  console.log(event.data.data);
-
   if (event.data.data == 'setfilter') {
     getFilter();
   };
