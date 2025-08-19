@@ -13,6 +13,7 @@ import { setFilter } from "./search-filter.js";
 function closeHeaderPops(searchFilterBox) {
   backdrop.style.display = 'none';
   searchFilterBox.style.display = 'none';
+  wishlist.style.display = 'none';
 };
 
 const searchFilterBut = document.querySelectorAll('.search__filter');
@@ -104,3 +105,91 @@ window.addEventListener('resize', function () {
   });
 });
 // Search filter
+
+// Wishlist
+const wishlistButton = document.getElementById('icon-menu__wishlist');
+const wishlist = document.getElementById('header__icon-menu--wishlist');
+wishlistButton.onclick = function (event) {
+  event.stopPropagation();
+  if (wishlist.style.display == 'none') {
+    closeHeaderPops(searchFilterBox[0]);
+    closeHeaderPops(searchFilterBox[1]);
+    wishlist.style.display = 'block';
+    backdrop.style.display = 'block';
+  }
+  else {
+    closeHeaderPops(searchFilterBox[0]);
+    closeHeaderPops(searchFilterBox[1]);
+  };
+};
+
+wishlist.onclick = function (event) {
+  event.stopPropagation();
+};
+
+function checkLocalstorageNotEmpty() {
+  let checkDivNoneDisplay = (divs) => {
+    let checkItem = true;
+    for (let i in divs) {
+      if (divs[i].style.display !== 'none') {
+        checkItem = false;
+        break;
+      };
+    };
+    if (checkItem) {
+      document.querySelector('.header__icon-menu--wishlist > div:nth-child(2)').style.display = 'none';
+      document.querySelector('.header__icon-menu--wishlist > div:nth-child(3)').style.display = 'none';
+      document.querySelector('.header__icon-menu--wishlist > button').style.display = 'none';
+      document.getElementById('wishlistEmpty').style.display = 'flex';
+    };
+  };
+  const wishlistItems = document.querySelectorAll('.header__icon-menu--wishlist > div > div');
+  let showWishlistNumber = document.getElementById('icon-menu--wishlist__write-num');
+  showWishlistNumber.textContent = 0;
+  let numberShowWishlistNumber = Number(showWishlistNumber.textContent);
+  wishlistItems.forEach(function (item) {
+    if (item.style.display !== 'none') {
+      numberShowWishlistNumber += 1;
+      showWishlistNumber.textContent = numberShowWishlistNumber + ' ' + 'items in wishlist';
+    };
+
+  });
+  if (showWishlistNumber.textContent == 0) {
+    showWishlistNumber.style.display = 'none';
+  };
+
+
+  let wishlistItem = Array.from(document.querySelectorAll('.header__icon-menu--wishlist > div > div'));;
+  wishlistItem = checkDivNoneDisplay(wishlistItem);
+};
+
+window.addEventListener('load', function () {
+
+  if (localStorage.getItem('wishlist') !== null) {
+    var getWishlist = localStorage.getItem('wishlist');
+    wishlist.innerHTML = getWishlist;
+  };
+
+
+  checkLocalstorageNotEmpty();
+
+  const deleteWishlistItemBut = document.querySelectorAll('.header__icon-menu--wishlist>div>div>img:first-child');
+  deleteWishlistItemBut.forEach(function (but) {
+    but.onclick = function () {
+      but.parentElement.style.transform = 'translateX(-397px)';
+      setTimeout(() => {
+        but.parentElement.style.display = 'none';
+        localStorage.setItem('wishlist', wishlist.innerHTML);
+        postMessage('wishListChanged', 'http://localhost');
+        checkLocalstorageNotEmpty();
+      }, 400);
+    };
+  });
+});
+
+const closeWishlist = document.getElementById('icon-menu--wishlist__close');
+closeWishlist.onclick = function () {
+  closeHeaderPops(searchFilterBox[0]);
+  closeHeaderPops(searchFilterBox[1]);
+};
+// Wishlist
