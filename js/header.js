@@ -17,6 +17,7 @@ function closeHeaderPops(searchFilterBox) {
   notificattion.style.transform = 'scale(0)';
   allTxtParent.style.transform = 'scale(0)';
   setting.style.display = 'none';
+  profile.style.display = 'none';
 };
 
 const searchFilterBut = document.querySelectorAll('.search__filter');
@@ -308,3 +309,33 @@ selectCrditeCard.forEach(function (but, index) {
   };
 });
 // Setting
+
+// Profile
+const profileBut = document.getElementById('profileButton');
+const profile = document.getElementById('profile');
+profileBut.onclick = function (e) {
+  e.stopPropagation();
+  closeHeaderPops(searchFilterBox[0]);
+  closeHeaderPops(searchFilterBox[1]);
+  if (profile.style.display == 'none') {
+    profile.style.display = 'block';
+    backdrop.style.display = 'block';
+    profile.style.display = 'block';
+  } else {
+    profile.style.display = 'none';
+    backdrop.style.display = 'none';
+  };
+};
+
+profile.onclick = function (e) {
+  e.stopPropagation();
+}
+
+const closeProfile = document.getElementById('icon-menu--profile__close');
+
+closeProfile.onclick = function (event) {
+  event.stopPropagation();
+  closeHeaderPops(searchFilterBox[0]);
+  closeHeaderPops(searchFilterBox[1]);
+};
+// Profile

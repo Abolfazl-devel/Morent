@@ -338,8 +338,27 @@
             </form>
           </span>
 
-          <img src="img/user.svg" style="width: 50px; border-radius: 50%;">
+          <div style="position: relative;">
+            <img src="img/user.svg" style="width: 50px; border-radius: 50%;" id="profileButton">
 
+            <div class="header__icon-menu--profile" style="display: none;" id="profile">
+              <div class="icon-menu--profile__close">
+                <img src="img/close.png" alt="close3" id="icon-menu--profile__close">
+              </div>
+              <div class="icon-menu--profile__info">
+                <img src="img/user.svg" alt="Your image">
+                <div>
+                  <p> Ameli Syuzi </p>
+                  <p>depese7006@exitbit.com</p>
+                </div>
+              </div>
+              <div class="icon-menu--profile__buttons">
+                <button>Setting</button>
+                <button>Orders</button>
+                <button>Log out</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div id="mobile-search__filters" class="search__filters"
