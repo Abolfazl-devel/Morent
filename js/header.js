@@ -16,6 +16,7 @@ function closeHeaderPops(searchFilterBox) {
   wishlist.style.display = 'none';
   notificattion.style.transform = 'scale(0)';
   allTxtParent.style.transform = 'scale(0)';
+  setting.style.display = 'none';
 };
 
 const searchFilterBut = document.querySelectorAll('.search__filter');
@@ -243,3 +244,67 @@ readMoreNotfication.onclick = function () {
   summary.style.display = 'none';
 };
 // Notfications
+
+// Setting
+const settingButton = document.getElementById('icon-menu__setting-button');
+const setting = document.getElementById('icon-menu__setting')
+settingButton.onclick = function (event) {
+  event.stopPropagation();
+  if (setting.style.display == 'none') {
+    closeHeaderPops(searchFilterBox[0]);
+    closeHeaderPops(searchFilterBox[1]);
+    setting.style.display = 'block';
+    backdrop.style.display = 'block';
+  } else {
+    closeHeaderPops(searchFilterBox[0]);
+    closeHeaderPops(searchFilterBox[1]);
+  };
+};
+
+setting.onclick = function (event) {
+  event.stopPropagation();
+};
+
+const closeSetting = document.querySelectorAll('.close-setting');
+closeSetting.forEach(function (close) {
+  close.onclick = function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+    closeHeaderPops(searchFilterBox[0]);
+    closeHeaderPops(searchFilterBox[1]);
+  };
+});
+
+setting.onclick = function () {
+  closeHeaderPops(searchFilterBox[0]);
+  closeHeaderPops(searchFilterBox[1]);
+};
+
+const selectCrditeCard = document.querySelectorAll('.icon-menu__payment-info div button');
+selectCrditeCard.forEach(function (but, index) {
+  but.onclick = function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+    const bankAccountForm = document.getElementById('bankAccount');
+    const creditCardForm = document.getElementById('cardInfo');
+    const images = document.querySelectorAll('.icon-menu__payment-info div button img');
+    if (index == 1) {
+      bankAccountForm.style.display = 'block';
+      creditCardForm.style.display = 'none';
+    } else {
+      bankAccountForm.style.display = 'none';
+      creditCardForm.style.display = 'block';
+    };
+    selectCrditeCard.forEach(function (disabledBut, index2) {
+      disabledBut.disabled = false;
+      disabledBut.removeAttribute('style');
+      images[index2].removeAttribute('style');
+    });
+    but.disabled = true;
+    but.style.background = '#3563EA';
+    but.style.color = '#fff';
+    but.style.border = 'none';
+    images[index].style.filter = 'brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(353deg) brightness(106%) contrast(101%)';
+  };
+});
+// Setting

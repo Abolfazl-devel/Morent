@@ -248,7 +248,99 @@
 
           </span>
 
-          <span> <img src="img/settings1.png"></span>
+          <span id="icon-menu__setting-button">
+            <img src="img/settings1.png">
+            <form class="icon-menu__setting" style="display: none; max-height: calc(100vh - 100px); overflow: scroll;"
+              id="icon-menu__setting">
+              <div class="icon-menu__setting--title">
+                <div>
+                  <div class="setting--title__title">
+                    <span>Your information</span>
+                  </div>
+                  <div class="setting--title__close close-setting">
+                    <img src="img/close.png" alt="Close">
+                  </div>
+                </div>
+                <div class="setting--title__discription">
+                  <span>You can change some information (not main like your name).</span>
+                </div>
+              </div>
+              <div class="icon-menu__name-info">
+                <label for="namePopup">Your name</label>
+                <input id="namePopup" type="text" name="name" disabled value=" Ameli Syuzi ">
+              </div>
+              <div class="icon-menu__payment-info">
+                <label>Payment Type</label>
+                <div>
+                  <button>
+                    <img src="img/card.svg" alt="Card">
+                    Credit/Debit Card
+                  </button>
+                  <button>
+                    <img src="img/bank.svg" alt="Bank">
+                    Bank Account
+                  </button>
+                </div>
+              </div>
+              <div id="bankAccount" style="display: none;">
+                <div class="icon-menu__iban">
+                  <label for="iban">IBAN</label>
+                  <input type="text" name="iban" id="iban">
+                </div>
+                <div class="icon-menu__bank-name">
+                  <label for="bank-name">Bank name</label>
+                  <input type="text" name="bank-name" id="bank-name">
+                </div>
+                <div class="icon-menu__swift-bic">
+                  <label for="swift-bic">SWIFT/BIC</label>
+                  <input type="text" name="swift-bic" id="swift-bic">
+                </div>
+                <div class="icon-menu__bank-owner-info">
+                  <label for="bank-owner-info">Card Holder Name</label>
+                  <input type="text" name="bank-owner-info" id="bank-owner-info">
+                </div>
+                <div class="icon-menu__confirmation">
+                  <input type="checkbox" id="bank-confirmation">
+                  <label for="bank-confirmation" style="margin-bottom: 0;">Set as default payment method</label>
+                </div>
+                <div class="icon-menu__send-cancel">
+                  <input type="submit" value="Save Payment Method" disabled>
+                  <button class="close-setting">Cancel</button>
+                </div>
+              </div>
+              <div id="cardInfo" style="display: none;">
+                <div class="icon-menu__card-num">
+                  <label>Card Number</label>
+                  <input type="text" type="card-number">
+                </div>
+                <div class="icon-menu__card-info">
+                  <div>
+                    <label for="card-date">Expiry date</label>
+                    <input type="text" name="expiry-date" id="card-date" placeholder="MM/YY">
+                  </div>
+                  <div>
+                    <label for="cvv">
+                      CVV
+                      <img src="img/question.svg" alt="?">
+                    </label>
+                    <input type="password" name="cvv" id="cvv" placeholder="***">
+                  </div>
+                </div>
+                <div class="icon-menu__card-owner-info">
+                  <label for="cardOwnerName">Card Holder Name</label>
+                  <input type="text" id="cardOwnerName">
+                </div>
+                <div class="icon-menu__confirmation">
+                  <input type="checkbox" id="confirmation">
+                  <label for="confirmation" style="margin-bottom: 0;">Set as default payment method</label>
+                </div>
+                <div class="icon-menu__send-cancel">
+                  <input type="submit" value="Save Payment Method" disabled>
+                  <button class="close-setting">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </span>
 
           <img src="img/user.svg" style="width: 50px; border-radius: 50%;">
 
