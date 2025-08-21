@@ -2023,9 +2023,8 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 
 .rent-form__title h5 {
 
-    padding-left: 2%;
-
-    padding-bottom: 3%;
+    padding-left: 5px;
+    padding-bottom: 5px;
 
 }
 
