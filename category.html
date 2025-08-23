@@ -707,7 +707,7 @@
 
         <div class="rent-form-products">
 
-          <div class="rent-form">
+          <div class="rent-form mx-width">
 
             <div class="rent-form__pick-drop">
 
@@ -731,15 +731,13 @@
 
                   <label class="rent-form__chose">
 
-                    <span> Select your city </span>
+                    <span id="pick-up-city"> Select your city </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
-
                     <div class="rent-form__chose-menu">
 
-                      <ul>
+                      <ul id="pick-up-city-selction">
 
                         <li> California </li>
 
@@ -765,15 +763,13 @@
 
                   <label class="rent-form__chose">
 
-                    <span> Select your date </span>
+                    <span id="pick-up-date"> Select your date </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
-
                     <div class="rent-form__chose-menu">
 
-                      <ul>
+                      <ul id="pick-up-date-selction">
 
                         <li> 2020 </li>
 
@@ -799,15 +795,13 @@
 
                   <label class="rent-form__chose">
 
-                    <span> Select your time </span>
+                    <span id="pick-up-time"> Select your time </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
-
                     <div class="rent-form__chose-menu">
 
-                      <ul>
+                      <ul id="pick-up-time-selction">
 
                         <li> 8:00 AM </li>
 
@@ -829,7 +823,7 @@
 
             <div class="rent-form__send-form">
 
-              <button>
+              <button id="rent-form__send-form">
 
                 <img src="img/up-arrow.png">
 
@@ -839,7 +833,7 @@
 
             </div>
 
-            <div class="rent-form__pick-drop" style="margin-right: 0;">
+            <div class="rent-form__pick-drop">
 
               <div class="rent-form__title">
 
@@ -861,15 +855,13 @@
 
                   <label class="rent-form__chose">
 
-                    <span> Select your city </span>
+                    <span id="drop-off-city"> Select your city </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
-
                     <div class="rent-form__chose-menu">
 
-                      <ul>
+                      <ul id="drop-off-city-selction">
 
                         <li> California </li>
 
@@ -895,15 +887,13 @@
 
                   <label class="rent-form__chose">
 
-                    <span> Select your date </span>
+                    <span id="drop-off-date"> Select your date </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
-
                     <div class="rent-form__chose-menu">
 
-                      <ul>
+                      <ul id="drop-off-date-selction">
 
                         <li> 2020 </li>
 
@@ -919,7 +909,7 @@
 
                 </div>
 
-                <div class="rent-form__fild" style="border: none; margin: 0;">
+                <div class="rent-form__fild" style="border: none;margin: 0;">
 
                   <div class="rent-form__chose--title">
 
@@ -929,15 +919,13 @@
 
                   <label class="rent-form__chose">
 
-                    <span> Select your time </span>
+                    <span id="drop-off-time"> Select your time </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
-
                     <div class="rent-form__chose-menu">
 
-                      <ul>
+                      <ul id="drop-off-time-selction">
 
                         <li> 8:00 AM </li>
 
@@ -1863,6 +1851,7 @@
   <script src="js/script.js"></script>
   <script type="module" src="js/category.js"></script>
   <script type="module" src="js/header.js"></script>
+  <script src="js/pick-drop-form.js" type="module"></script>
 </body>
 
 

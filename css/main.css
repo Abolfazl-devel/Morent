@@ -2089,6 +2089,7 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
     cursor: pointer;
 
     margin: 0px 20px;
+    transition: all ease 0.3s;
 
 }
 
