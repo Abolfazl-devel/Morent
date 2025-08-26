@@ -1,4 +1,28 @@
 'use strict';
+//Import backdrop
+import { backdrop } from "./header.js";
+//Import backdrop
+
+const cars = document.querySelectorAll('.notover-products-box__product');
+
+let deviceSize = window.innerWidth;
+
+window.addEventListener('resize', function () {
+  deviceSize = this.innerWidth;
+  function changeDisplayInReponsive(displayType1, displayType2) {
+    cars.forEach(function (car) {
+      if (car.style.display == displayType1) {
+        car.style.display = displayType2;
+      };
+    });
+  };
+
+  if (deviceSize < 770) {
+    changeDisplayInReponsive('block', 'flex');
+  } else {
+    changeDisplayInReponsive('flex', 'block');
+  };
+});
 
 const saveFilters = {
   type: null,
@@ -8,7 +32,6 @@ const saveFilters = {
 
 let result;
 let checkNone = true;
-const cars = document.querySelectorAll('.notover-products-box__product');
 
 const checkDivNoneDisplay = (divs) => {
   checkNone = true;
@@ -40,7 +63,6 @@ function loading() {
     } else {
       showAndHiddenError('flex', 'none');
     };
-    sessionStorage.setItem('filterProducts');
   }, 3300);
 };
 
@@ -69,7 +91,11 @@ function setFilter() {
     };
 
     if (show) {
-      car.style.display = 'block';
+      if (deviceSize < 770) {
+        car.style.display = 'flex';
+      } else {
+        car.style.display = 'block';
+      };
     } else {
       car.style.display = 'none';
     };
@@ -92,6 +118,11 @@ function setFilterEvent(selectFilterTXT, index, filterPart) {
       type.removeAttribute('style');
     });
     filter[index].style.color = '#3563EA';
+    if (filter[index - 6] !== undefined) {
+      filter[index - 6].style.color = '#3563EA';
+    } else {
+      filter[index + 6].style.color = '#3563EA';
+    };
     const filterValue = filter[index].textContent.trim().toLowerCase();
     saveFilters[filterPart] = filterValue;
   };
@@ -112,10 +143,37 @@ capacityFilterParent.forEach(function (container, index) {
   };
 });
 
-const priceFilter = document.getElementById('filterPrice');
-priceFilter.oninput = function () {
-  showAndHiddenError('none', 'none');
-  const maxPrice = parseInt(this.value, 10);
-  saveFilters.price = maxPrice;
-  setFilter();
+const priceFilter = document.querySelectorAll('.filterPrice');
+priceFilter.forEach(function (input) {
+  input.oninput = function () {
+    showAndHiddenError('none', 'none');
+    const maxPrice = parseInt(input.value, 10);
+    saveFilters.price = maxPrice;
+    setFilter();
+    priceFilter.forEach(function (otherInput) {
+      otherInput.value = maxPrice;
+    });
+  };
+});
+
+const mobileFilterButton = document.getElementById('filter-mobile-but');
+const mobileFilter = document.getElementById('filter-mobile');
+mobileFilterButton.onclick = function (event) {
+  event.stopPropagation();
+  backdrop.style.display = 'block';
+  mobileFilter.style.left = 0;
 };
+
+mobileFilter.onclick = function (event) {
+  event.stopPropagation();
+};
+
+const closeMobileFilter = document.getElementById('filter__close');
+closeMobileFilter.onclick = function () {
+  mobileFilter.removeAttribute('style');
+  backdrop.style.display = 'none';
+};
+
+window.addEventListener('click', function () {
+  mobileFilter.removeAttribute('style');
+});

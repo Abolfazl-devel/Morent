@@ -1679,9 +1679,9 @@ input[id=mobile-menu]:checked+.mobile-menu {
 
     height: fit-content;
 
-    top: 57px;
+    top: 2px;
 
-    left: -300px;
+    left: -100%;
 
     display: block;
 
@@ -1690,6 +1690,12 @@ input[id=mobile-menu]:checked+.mobile-menu {
     border: 1px solid rgba(0, 0, 0, 0.1);
 
     display: none;
+
+    width: 100%;
+
+    z-index: 3;
+
+    box-sizing: border-box;
 
 }
 
@@ -1709,7 +1715,7 @@ input[id=mobile-menu]:checked+.mobile-menu {
 
     filter: brightness(0) saturate(100%) invert(32%) sepia(2%) saturate(405%) hue-rotate(8deg) brightness(97%) contrast(90%);
 
-    right: -96px;
+    right: -83px;
 
     top: -8px;
 
@@ -1725,7 +1731,7 @@ input[id=mobile-menu]:checked+.mobile-menu {
 
     margin: 20px 0px;
 
-    width: 150px;
+    width: 100%;
 
     cursor: pointer;
 
@@ -1906,7 +1912,6 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 .rent-form-products {
 
     padding-left: 18px;
-
 }
 
 
@@ -2099,7 +2104,7 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 
 .rent-form__chose {
 
-    font-size: 13px;
+    font-size: 12px;
 
     color: #8FA3BE;
 

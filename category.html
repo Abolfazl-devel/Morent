@@ -551,7 +551,7 @@
 
             <p> PRICE </p>
 
-            <input type="range" min="0" max="100" step="10" id="filterPrice" value="100">
+            <input type="range" min="0" max="100" step="10" class="filterPrice" value="100">
 
             <h5> Max.$100.00 </h5>
 
@@ -559,21 +559,19 @@
 
         </div>
 
-        <input type="checkbox" id="filter-mobile">
-
-        <label class="filter-mobile" for="filter-mobile">
+        <div class="filter-mobile" id="filter-mobile-but">
 
           <img src="img/filters.png">
 
-        </label>
+        </div>
 
-        <div class="filter">
+        <div class="filter" id="filter-mobile">
 
           <div class="filter__car--type">
 
             <p> TYPE </p>
 
-            <label for="filter-mobile">
+            <label id="filter__close">
 
               <img src="img/close.png">
 
@@ -595,7 +593,7 @@
 
               <h6> SUV </h6>
 
-              <span> (12) </span>
+              <span> (04) </span>
 
             </div>
 
@@ -605,7 +603,7 @@
 
               <h6> MPV </h6>
 
-              <span> (16) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -615,7 +613,7 @@
 
               <h6> Sedan </h6>
 
-              <span> (20) </span>
+              <span> (01) </span>
 
             </div>
 
@@ -625,7 +623,7 @@
 
               <h6> Coupe </h6>
 
-              <span> (14) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -635,7 +633,7 @@
 
               <h6> Hatchback </h6>
 
-              <span> (14) </span>
+              <span> (02) </span>
 
             </div>
 
@@ -651,7 +649,7 @@
 
               <h6> 2 People</h6>
 
-              <span> (10) </span>
+              <span> (02) </span>
 
             </div>
 
@@ -661,7 +659,7 @@
 
               <h6> 4 People</h6>
 
-              <span> (14) </span>
+              <span> (03) </span>
 
             </div>
 
@@ -671,7 +669,7 @@
 
               <h6> 6 People</h6>
 
-              <span> (12) </span>
+              <span> (04) </span>
 
             </div>
 
@@ -681,7 +679,7 @@
 
               <h6> 8 or More </h6>
 
-              <span> (16) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -691,7 +689,7 @@
 
             <p> PRICE </p>
 
-            <input type="range">
+            <input type="range" min="0" max="100" step="10" class="filterPrice" value="100">
 
             <h5> Max.$100.00 </h5>
 
@@ -1869,7 +1867,7 @@
   <script type="module" src="js/category.js"></script>
   <script type="module" src="js/header.js"></script>
   <script src="js/pick-drop-form.js" type="module"></script>
-  <script src="js/filter1.js"></script>
+  <script src="js/filter1.js" type="module"></script>
 </body>
 
 
