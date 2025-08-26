@@ -1912,6 +1912,7 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 .rent-form-products {
 
     padding-left: 18px;
+    min-width: 75%;
 }
 
 

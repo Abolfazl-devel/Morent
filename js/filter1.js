@@ -3,26 +3,13 @@
 import { backdrop } from "./header.js";
 //Import backdrop
 
-const cars = document.querySelectorAll('.notover-products-box__product');
-
 let deviceSize = window.innerWidth;
 
-window.addEventListener('resize', function () {
-  deviceSize = this.innerWidth;
-  function changeDisplayInReponsive(displayType1, displayType2) {
-    cars.forEach(function (car) {
-      if (car.style.display == displayType1) {
-        car.style.display = displayType2;
-      };
-    });
-  };
+const filterParent = document.getElementById('filter');
 
-  if (deviceSize < 770) {
-    changeDisplayInReponsive('block', 'flex');
-  } else {
-    changeDisplayInReponsive('flex', 'block');
-  };
-});
+const cars = document.querySelectorAll('.notover-products-box__product');
+
+const productsParent = document.getElementById('notover-products-box');
 
 const saveFilters = {
   type: null,
@@ -43,8 +30,55 @@ const checkDivNoneDisplay = (divs) => {
   };
   return checkNone;
 };
+
+if (sessionStorage.getItem('productBox') !== null) {
+  const getProductStatus = sessionStorage.getItem('productBox');
+  const getFilter = sessionStorage.getItem('filterBox');
+  productsParent.innerHTML = getProductStatus;
+  filterParent.innerHTML = getFilter;
+};
+
+function richSaveFilter(sessionStorageName) {
+  if (sessionStorage.getItem(sessionStorageName) !== null) {
+    const getItem = sessionStorage.getItem(sessionStorageName);
+    saveFilters[sessionStorageName] = getItem;
+  };
+};
+
+richSaveFilter('type');
+
+richSaveFilter('capacity');
+
+richSaveFilter('price');
+
+
+window.addEventListener('DOMContentLoaded', function () {
+  if (sessionStorage.getItem('type') !== null || sessionStorage.getItem('capacity') !== null || sessionStorage.getItem('price') !== null) {
+    setFilter();
+    console.log(saveFilters);
+
+  };
+});
+
+window.addEventListener('resize', function () {
+  deviceSize = this.innerWidth;
+  function changeDisplayInReponsive(displayType1, displayType2) {
+    cars.forEach(function (car) {
+      if (car.style.display == displayType1) {
+        car.style.display = displayType2;
+      };
+    });
+  };
+
+  if (deviceSize < 770) {
+    changeDisplayInReponsive('block', 'flex');
+  } else {
+    changeDisplayInReponsive('flex', 'block');
+  };
+});
+
+
 function showAndHiddenError(displayType, displayType2) {
-  const productsParent = document.getElementById('notover-products-box');
   const showMoreParent = document.getElementById('w-100-show-number');
   const error404 = document.getElementById('not-found');
   productsParent.style.display = displayType;
@@ -63,6 +97,8 @@ function loading() {
     } else {
       showAndHiddenError('flex', 'none');
     };
+    sessionStorage.setItem('productBox', productsParent.innerHTML);
+    sessionStorage.setItem('filterBox', filterParent.innerHTML);
   }, 3300);
 };
 
@@ -71,11 +107,14 @@ function setFilter() {
   const types = document.querySelectorAll('.notover-products-box__deception p');
   const capacity = document.querySelectorAll('.notover-products-box__product--info div:nth-child(3) span');
   const productsPrice = document.querySelectorAll('.notover-products-box__price h3');
-
+  const cars = document.querySelectorAll('.notover-products-box__product')
   cars.forEach(function (car, index) {
     const carType = types[index].textContent.trim().toLowerCase();
     const carCapacity = capacity[index].textContent.trim().toLowerCase();
     const productsPriceValue = parseInt(productsPrice[index].textContent.replace(/\D+/g, '').slice(0, -2));
+    console.log(carType);
+    console.log(carCapacity);
+    console.log(productsPriceValue);
 
     let show = true;
 
@@ -125,6 +164,7 @@ function setFilterEvent(selectFilterTXT, index, filterPart) {
     };
     const filterValue = filter[index].textContent.trim().toLowerCase();
     saveFilters[filterPart] = filterValue;
+    sessionStorage.setItem(filterPart, filterValue);
   };
   setFilter();
 };
@@ -133,6 +173,7 @@ const typeFilterParent = document.querySelectorAll('.filter__car--type div');
 typeFilterParent.forEach(function (container, index) {
   container.onclick = function () {
     setFilterEvent('.filter__car--type div h6', index, 'type');
+    console.log(saveFilters);
   };
 });
 
@@ -153,6 +194,7 @@ priceFilter.forEach(function (input) {
     priceFilter.forEach(function (otherInput) {
       otherInput.value = maxPrice;
     });
+    sessionStorage.setItem('price', input.value);
   };
 });
 

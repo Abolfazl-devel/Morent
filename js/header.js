@@ -2,6 +2,7 @@
 
 // Backdrop
 const backdrop = document.getElementById('backdrop');
+export { backdrop };
 // Backdrop
 
 // Set search filter
