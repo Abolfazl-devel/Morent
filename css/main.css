@@ -1727,6 +1727,8 @@ input[id=mobile-menu]:checked+.mobile-menu {
 
     width: 150px;
 
+    cursor: pointer;
+
 }
 
 
@@ -3031,6 +3033,46 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 
 /* end products box responsive */
 
+/* Start product not found error */
+.w-100-not-found {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.not-found {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.not-found>img {
+    width: 300px;
+}
+
+.not-found p {
+    font-weight: 600;
+    color: #3563EA;
+    font-size: 20px;
+}
+
+/* end product not found error */
+
+/* Start product loading */
+.w-100-loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading img {
+    width: 100px;
+}
+
+/* End product loading */
 
 
 /*start show button & number cars */

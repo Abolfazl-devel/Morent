@@ -445,7 +445,7 @@
 
               <h6> Sport </h6>
 
-              <span> (10) </span>
+              <span> (02) </span>
 
             </div>
 
@@ -455,7 +455,7 @@
 
               <h6> SUV </h6>
 
-              <span> (12) </span>
+              <span> (04) </span>
 
             </div>
 
@@ -465,7 +465,7 @@
 
               <h6> MPV </h6>
 
-              <span> (16) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -475,7 +475,7 @@
 
               <h6> Sedan </h6>
 
-              <span> (20) </span>
+              <span> (01) </span>
 
             </div>
 
@@ -485,7 +485,7 @@
 
               <h6> Coupe </h6>
 
-              <span> (14) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -495,13 +495,13 @@
 
               <h6> Hatchback </h6>
 
-              <span> (14) </span>
+              <span> (02) </span>
 
             </div>
 
           </div>
 
-          <div class="filterm__car--capacity">
+          <div class="filter__car--capacity">
 
             <p> CAPACITY </p>
 
@@ -509,19 +509,9 @@
 
               <input type="checkbox">
 
-              <h6> 2 Person </h6>
+              <h6> 2 People</h6>
 
-              <span> (10) </span>
-
-            </div>
-
-            <div>
-
-              <input type="checkbox">
-
-              <h6> 4 Person </h6>
-
-              <span> (14) </span>
+              <span> (02) </span>
 
             </div>
 
@@ -529,9 +519,19 @@
 
               <input type="checkbox">
 
-              <h6> 6 Person </h6>
+              <h6> 4 People</h6>
 
-              <span> (12) </span>
+              <span> (03) </span>
+
+            </div>
+
+            <div>
+
+              <input type="checkbox">
+
+              <h6> 6 People</h6>
+
+              <span> (04) </span>
 
             </div>
 
@@ -541,7 +541,7 @@
 
               <h6> 8 or More </h6>
 
-              <span> (16) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -551,7 +551,7 @@
 
             <p> PRICE </p>
 
-            <input type="range">
+            <input type="range" min="0" max="100" step="10" id="filterPrice" value="100">
 
             <h5> Max.$100.00 </h5>
 
@@ -585,7 +585,7 @@
 
               <h6> Sport </h6>
 
-              <span> (10) </span>
+              <span> (02) </span>
 
             </div>
 
@@ -641,7 +641,7 @@
 
           </div>
 
-          <div class="filterm__car--capacity">
+          <div class="filter__car--capacity">
 
             <p> CAPACITY </p>
 
@@ -649,7 +649,7 @@
 
               <input type="checkbox">
 
-              <h6> 2 Person </h6>
+              <h6> 2 People</h6>
 
               <span> (10) </span>
 
@@ -659,7 +659,7 @@
 
               <input type="checkbox">
 
-              <h6> 4 Person </h6>
+              <h6> 4 People</h6>
 
               <span> (14) </span>
 
@@ -669,7 +669,7 @@
 
               <input type="checkbox">
 
-              <h6> 6 Person </h6>
+              <h6> 6 People</h6>
 
               <span> (12) </span>
 
@@ -953,7 +953,7 @@
 
           <!-- start products -->
 
-          <div class="notover-products-box">
+          <div class="notover-products-box" id="notover-products-box">
 
             <div class="notover-products-box__products">
 
@@ -1705,9 +1705,26 @@
 
           </div>
 
+          <!-- Start product loading -->
+          <div class="w-100-loading" style="display: none;" id="loading">
+            <div class="loading">
+              <img src="img/loading.gif" alt="">
+            </div>
+          </div>
+          <!-- End product loading -->
+
+          <!-- Start product not found error-->
+          <div class="w-100-not-found" style="display: none;" id="not-found">
+            <div class="not-found mx-width">
+              <img src="img/car-accident.svg" alt="Not found 404">
+              <p>Sorry we couldn't find your specific product (Not found 404)</p>
+            </div>
+          </div>
+          <!-- End product not found error-->
+
           <!-- start show button & number cars -->
 
-          <div class="w-100-show-number">
+          <div class="w-100-show-number" id="w-100-show-number">
 
             <div class="show-number mx-width">
 
@@ -1852,6 +1869,7 @@
   <script type="module" src="js/category.js"></script>
   <script type="module" src="js/header.js"></script>
   <script src="js/pick-drop-form.js" type="module"></script>
+  <script src="js/filter1.js"></script>
 </body>
 
 
