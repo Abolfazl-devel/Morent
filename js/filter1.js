@@ -55,8 +55,6 @@ richSaveFilter('price');
 window.addEventListener('DOMContentLoaded', function () {
   if (sessionStorage.getItem('type') !== null || sessionStorage.getItem('capacity') !== null || sessionStorage.getItem('price') !== null) {
     setFilter();
-    console.log(saveFilters);
-
   };
 });
 
@@ -112,9 +110,7 @@ function setFilter() {
     const carType = types[index].textContent.trim().toLowerCase();
     const carCapacity = capacity[index].textContent.trim().toLowerCase();
     const productsPriceValue = parseInt(productsPrice[index].textContent.replace(/\D+/g, '').slice(0, -2));
-    console.log(carType);
-    console.log(carCapacity);
-    console.log(productsPriceValue);
+
 
     let show = true;
 
@@ -173,7 +169,6 @@ const typeFilterParent = document.querySelectorAll('.filter__car--type div');
 typeFilterParent.forEach(function (container, index) {
   container.onclick = function () {
     setFilterEvent('.filter__car--type div h6', index, 'type');
-    console.log(saveFilters);
   };
 });
 
