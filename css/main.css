@@ -5310,7 +5310,7 @@ input[id=statistics]:checked+.top-products__statistics {
 
 
 
-.preview__price--button button {
+.preview__price--button a {
 
     background-color: #3563EA;
 
