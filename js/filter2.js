@@ -4,7 +4,7 @@ function setFilter(sessionStorageItemName, selectTXT, index) {
   sessionStorage.clear();
   sessionStorage.setItem(sessionStorageItemName, txt[index].textContent.trim().toLowerCase());
   postMessage({ type: 'SEND_DATA', data: 'setfilter' }, 'http://localhost');
-  // window.location.href = 'category.html';
+  window.location.href = 'category.html';
 };
 
 

@@ -429,7 +429,7 @@
 
     <!-- start filter -->
 
-       <!-- start filter -->
+    <!-- start filter -->
 
     <div class="w-100-filter-rent-form-products">
 
@@ -713,7 +713,8 @@
 
             <div class="preview__all-img">
 
-              <div class="preview__baner">
+              <div class="preview__baner" id="preview__baner"
+                style="background-color: #3563EA;background-image: url(./img/Arrow-right.png);">
 
                 <div class="preview__baner--text">
 
@@ -733,45 +734,39 @@
 
               <div class="preview__product-details">
 
-                <input type="checkbox" id="preview__product-details--img1">
+                <div style="position: relative; margin: 0;border: 1px solid #3563EA;">
 
-                <div style="position: relative; margin: 0;">
-
-                  <label>
+                  <div style="transform: scale(85%);">
 
                     <img src="img/car2.png">
 
-                  </label>
+                  </div>
 
-                  <label class="preview__product-details--hover" for="preview__product-details--img1"></label>
+                  <div class="preview__product-details--hover"></div>
 
                 </div>
 
-                <input type="checkbox" id="preview__product-details--img2">
-
                 <div style="position: relative;">
 
-                  <label>
+                  <div>
 
                     <img src="img/incar.png">
 
-                  </label>
+                  </div>
 
-                  <label class="preview__product-details--hover" for="preview__product-details--img2"></label>
+                  <div class="preview__product-details--hover"></div>
 
                 </div>
 
-                <input type="checkbox" id="preview__product-details--img3">
-
                 <div style="position: relative;">
 
-                  <label>
+                  <div>
 
                     <img src="img/incar2.png">
 
-                  </label>
+                  </div>
 
-                  <label class="preview__product-details--hover" for="preview__product-details--img3"></label>
+                  <div class="preview__product-details--hover"></div>
 
                 </div>
 
@@ -1754,6 +1749,7 @@
   <script type="module" src="js/header.js"></script>
   <script src="js/filter2.js"></script>
   <script type="module" src="js/mobile-filter.js"></script>
+  <script src="js/single-product.js"></script>
 </body>
 
 

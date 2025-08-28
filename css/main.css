@@ -4860,10 +4860,6 @@ input[id=statistics]:checked+.top-products__statistics {
 
 .preview__baner {
 
-    background-color: #3563EA;
-
-    background-image: url(../img/Arrow-right.png);
-
     display: flex;
 
     flex-direction: column;
@@ -4876,6 +4872,10 @@ input[id=statistics]:checked+.top-products__statistics {
 
 }
 
+.preview__baner--img {
+    width: 100%;
+    height: 100%;
+}
 
 
 .preview__baner--text h6 {
@@ -4944,7 +4944,9 @@ input[id=statistics]:checked+.top-products__statistics {
 
 }
 
-
+.preview__product-details>div {
+    margin-left: 25px;
+}
 
 .preview__product-details div {
 
@@ -4962,13 +4964,11 @@ input[id=statistics]:checked+.top-products__statistics {
 
     box-sizing: border-box;
 
-    margin-left: 25px;
-
 }
 
 
 
-.preview__product-details label {
+.preview__product-details div>div {
 
     display: flex;
 
@@ -4992,7 +4992,7 @@ input[id=statistics]:checked+.top-products__statistics {
 
 
 
-.preview__product-details div:nth-child(2) label:nth-child(1) {
+.preview__product-details div:first-child div:first-child {
 
     background-color: #3563EA;
 
@@ -5008,7 +5008,7 @@ input[id=statistics]:checked+.top-products__statistics {
 
 
 
-.preview__product-details div:nth-child(2) img {
+.preview__product-details>div:first-child img {
 
     width: 125px;
 
@@ -5020,7 +5020,7 @@ input[id=statistics]:checked+.top-products__statistics {
 
 
 
-.preview__product-details label img {
+.preview__product-details div img {
 
     width: 115px;
 
@@ -5334,7 +5334,7 @@ input[id=statistics]:checked+.top-products__statistics {
 
 /*start preview hover & checked */
 
-.preview__product-details label:hover {
+.preview__product-details div:hover {
 
     opacity: 1;
 
