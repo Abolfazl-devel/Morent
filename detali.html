@@ -429,13 +429,15 @@
 
     <!-- start filter -->
 
-    <div class="w-100-detali-filter-rent-form-products">
+       <!-- start filter -->
 
-      <div class="detali-filter-rent-form-products mx-width">
+    <div class="w-100-filter-rent-form-products">
 
-        <div class="detali-filter">
+      <div class="filter-rent-form-products mx-width">
 
-          <div class="detali-filter__car--type">
+        <div class="filter" id="filter">
+
+          <div class="filter__car--type">
 
             <p> TYPE </p>
 
@@ -445,7 +447,7 @@
 
               <h6> Sport </h6>
 
-              <span> (10) </span>
+              <span> (02) </span>
 
             </div>
 
@@ -455,7 +457,7 @@
 
               <h6> SUV </h6>
 
-              <span> (12) </span>
+              <span> (04) </span>
 
             </div>
 
@@ -465,7 +467,7 @@
 
               <h6> MPV </h6>
 
-              <span> (16) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -475,7 +477,7 @@
 
               <h6> Sedan </h6>
 
-              <span> (20) </span>
+              <span> (01) </span>
 
             </div>
 
@@ -485,7 +487,7 @@
 
               <h6> Coupe </h6>
 
-              <span> (14) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -495,13 +497,13 @@
 
               <h6> Hatchback </h6>
 
-              <span> (14) </span>
+              <span> (02) </span>
 
             </div>
 
           </div>
 
-          <div class="detali-filterm__car--capacity">
+          <div class="filter__car--capacity">
 
             <p> CAPACITY </p>
 
@@ -509,19 +511,9 @@
 
               <input type="checkbox">
 
-              <h6> 2 Person </h6>
+              <h6> 2 People</h6>
 
-              <span> (10) </span>
-
-            </div>
-
-            <div>
-
-              <input type="checkbox">
-
-              <h6> 4 Person </h6>
-
-              <span> (14) </span>
+              <span> (02) </span>
 
             </div>
 
@@ -529,9 +521,19 @@
 
               <input type="checkbox">
 
-              <h6> 6 Person </h6>
+              <h6> 4 People</h6>
 
-              <span> (12) </span>
+              <span> (03) </span>
+
+            </div>
+
+            <div>
+
+              <input type="checkbox">
+
+              <h6> 6 People</h6>
+
+              <span> (04) </span>
 
             </div>
 
@@ -541,7 +543,7 @@
 
               <h6> 8 or More </h6>
 
-              <span> (16) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -551,7 +553,7 @@
 
             <p> PRICE </p>
 
-            <input type="range">
+            <input type="range" min="0" max="100" step="10" class="filterPrice" value="0">
 
             <h5> Max.$100.00 </h5>
 
@@ -559,21 +561,19 @@
 
         </div>
 
-        <input type="checkbox" id="detali-filter-mobile">
-
-        <label class="detali-filter-mobile" for="detali-filter-mobile">
+        <div class="filter-mobile" id="filter-mobile-but">
 
           <img src="img/filters.png">
 
-        </label>
+        </div>
 
-        <div class="detali-filter">
+        <div class="filter" id="filter-mobile">
 
-          <div class="detali-filter__car--type">
+          <div class="filter__car--type">
 
             <p> TYPE </p>
 
-            <label for="detali-filter-mobile">
+            <label id="filter__close">
 
               <img src="img/close.png">
 
@@ -585,7 +585,7 @@
 
               <h6> Sport </h6>
 
-              <span> (10) </span>
+              <span> (02) </span>
 
             </div>
 
@@ -595,7 +595,7 @@
 
               <h6> SUV </h6>
 
-              <span> (12) </span>
+              <span> (04) </span>
 
             </div>
 
@@ -605,7 +605,7 @@
 
               <h6> MPV </h6>
 
-              <span> (16) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -615,7 +615,7 @@
 
               <h6> Sedan </h6>
 
-              <span> (20) </span>
+              <span> (01) </span>
 
             </div>
 
@@ -625,7 +625,7 @@
 
               <h6> Coupe </h6>
 
-              <span> (14) </span>
+              <span> (00) </span>
 
             </div>
 
@@ -635,13 +635,13 @@
 
               <h6> Hatchback </h6>
 
-              <span> (14) </span>
+              <span> (02) </span>
 
             </div>
 
           </div>
 
-          <div class="detali-filterm__car--capacity">
+          <div class="filter__car--capacity">
 
             <p> CAPACITY </p>
 
@@ -649,19 +649,9 @@
 
               <input type="checkbox">
 
-              <h6> 2 Person </h6>
+              <h6> 2 People</h6>
 
-              <span> (10) </span>
-
-            </div>
-
-            <div>
-
-              <input type="checkbox">
-
-              <h6> 4 Person </h6>
-
-              <span> (14) </span>
+              <span> (02) </span>
 
             </div>
 
@@ -669,9 +659,19 @@
 
               <input type="checkbox">
 
-              <h6> 6 Person </h6>
+              <h6> 4 People</h6>
 
-              <span> (12) </span>
+              <span> (03) </span>
+
+            </div>
+
+            <div>
+
+              <input type="checkbox">
+
+              <h6> 6 People</h6>
+
+              <span> (04) </span>
 
             </div>
 
@@ -681,23 +681,25 @@
 
               <h6> 8 or More </h6>
 
-              <span> (16) </span>
+              <span> (00) </span>
 
             </div>
 
           </div>
 
-          <div class="detali-filter__car--price">
+          <div class="filter__car--price">
 
             <p> PRICE </p>
 
-            <input type="range">
+            <input type="range" min="0" max="100" step="10" class="filterPrice" value="0">
 
             <h5> Max.$100.00 </h5>
 
           </div>
 
         </div>
+
+
 
         <!-- end filter-->
 
@@ -1750,6 +1752,8 @@
   </div>
   <script src="js/script.js"></script>
   <script type="module" src="js/header.js"></script>
+  <script src="js/filter2.js"></script>
+  <script type="module" src="js/mobile-filter.js"></script>
 </body>
 
 

@@ -1,7 +1,4 @@
 'use strict';
-//Import backdrop
-import { backdrop } from "./header.js";
-//Import backdrop
 
 let deviceSize = window.innerWidth;
 
@@ -31,25 +28,30 @@ const checkDivNoneDisplay = (divs) => {
   return checkNone;
 };
 
-if (sessionStorage.getItem('productBox') !== null) {
-  const getProductStatus = sessionStorage.getItem('productBox');
-  const getFilter = sessionStorage.getItem('filterBox');
-  productsParent.innerHTML = getProductStatus;
-  filterParent.innerHTML = getFilter;
-};
-
-function richSaveFilter(sessionStorageName) {
+function richSaveFilter(sessionStorageName, selectFilterType) {
   if (sessionStorage.getItem(sessionStorageName) !== null) {
     const getItem = sessionStorage.getItem(sessionStorageName);
     saveFilters[sessionStorageName] = getItem;
+    const filterType = document.querySelectorAll(selectFilterType);
+    if (sessionStorageName !== 'price') {
+      filterType.forEach(function (aFilter) {
+        if (aFilter.textContent.trim().toLowerCase() == getItem) {
+          aFilter.style.color = '#3563EA';
+        };
+      });
+    } else {
+      filterType.forEach(function (aFilter) {
+        aFilter.value = getItem;
+      });
+    };
   };
 };
 
-richSaveFilter('type');
+richSaveFilter('type', '.filter__car--type h6');
 
-richSaveFilter('capacity');
+richSaveFilter('capacity', '.filter__car--capacity div h6');
 
-richSaveFilter('price');
+richSaveFilter('price', '.filterPrice');
 
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -95,8 +97,6 @@ function loading() {
     } else {
       showAndHiddenError('flex', 'none');
     };
-    sessionStorage.setItem('productBox', productsParent.innerHTML);
-    sessionStorage.setItem('filterBox', filterParent.innerHTML);
   }, 3300);
 };
 
@@ -191,26 +191,4 @@ priceFilter.forEach(function (input) {
     });
     sessionStorage.setItem('price', input.value);
   };
-});
-
-const mobileFilterButton = document.getElementById('filter-mobile-but');
-const mobileFilter = document.getElementById('filter-mobile');
-mobileFilterButton.onclick = function (event) {
-  event.stopPropagation();
-  backdrop.style.display = 'block';
-  mobileFilter.style.left = 0;
-};
-
-mobileFilter.onclick = function (event) {
-  event.stopPropagation();
-};
-
-const closeMobileFilter = document.getElementById('filter__close');
-closeMobileFilter.onclick = function () {
-  mobileFilter.removeAttribute('style');
-  backdrop.style.display = 'none';
-};
-
-window.addEventListener('click', function () {
-  mobileFilter.removeAttribute('style');
 });

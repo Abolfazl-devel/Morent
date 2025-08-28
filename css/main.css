@@ -4832,8 +4832,7 @@ input[id=statistics]:checked+.top-products__statistics {
     display: flex;
 
     flex-direction: column;
-
-    padding: 0px 20px;
+    width: 100%;
 
 }
 
