@@ -1,3 +1,6 @@
+'use strict';
+import { changeCheckVarable } from "./pick-drop-form.js";
+
 var isSelect = '';
 
 function changeBorder(item, index, borderType) {
@@ -38,7 +41,7 @@ function arrowKeys(option, key, but, borderType) {
   };
 };
 
-function workingKey(whichItems, key, lowerKey, but, borderType, selectedItem, selectBox) {
+function workingKey(whichItems, key, lowerKey, but, borderType, selectedItem, selectBox, isPick) {
   var checkAlphabets = /^[a-z]$/i;
   if (checkAlphabets.test(key)) {
     selectItem(whichItems, lowerKey, borderType);
@@ -46,6 +49,11 @@ function workingKey(whichItems, key, lowerKey, but, borderType, selectedItem, se
   arrowKeys(whichItems, key, but, borderType);
 
   if (key == 'Enter' && isSelect !== '') {
+    if (isPick) {
+      changeCheckVarable(0, true);
+    } else {
+      changeCheckVarable(3, true);
+    };
     selectedItem.textContent = isSelect.textContent;
     selectBox.removeAttribute('style');
     whichItems.forEach(function (item) {
@@ -79,8 +87,4 @@ function selectItem(option, key, borderType) {
   changeBorder(matchedItem, nextSelect, borderType);
 };
 
-function closeSelections(selectSelction, selectionParent) {
-
-};
-
-export { workingKey, closeSelections };
+export { workingKey };

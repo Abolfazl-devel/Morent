@@ -12,13 +12,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta charset="UTF-8">
+
 </head>
 
 
 
 <body>
 
-  <div class="continer" style="overflow: unset;">
+  <div class="continer" style="overflow: unset;" id="continer">
 
 
 
@@ -433,7 +435,7 @@
 
       <div class="payment-rent-forms-about-car mx-width">
 
-        <div class="payment-rent-forms">
+        <form class="payment-rent-forms" id="payment-rent-forms">
 
           <div class="payment-rent-forms__rent-form" style="margin-bottom: 30px;">
 
@@ -459,7 +461,9 @@
 
                 <p> Name </p>
 
-                <input type="text" placeholder="Your name">
+                <input type="text" placeholder="Your name" id="payment-rent-form__part--name" name="name">
+
+                <p class="payment-rent-form__part--error">ⓘ Enter a real name please.</p>
 
               </div>
 
@@ -467,7 +471,10 @@
 
                 <p> Phone Number </p>
 
-                <input type="text" placeholder="Phone number">
+                <input type="text" placeholder="Phone number" id="payment-rent-form__part--phone-number"
+                  name="phone-number">
+
+                <p class="payment-rent-form__part--error">ⓘ Enter a real phone number please.</p>
 
               </div>
 
@@ -475,7 +482,9 @@
 
                 <p> Address </p>
 
-                <input type="tel" placeholder="Address">
+                <input type="text" placeholder="Address" id="payment-rent-form__part--address" name="address">
+
+                <p class="payment-rent-form__part--error">ⓘ Enter a real address please.</p>
 
               </div>
 
@@ -483,7 +492,8 @@
 
                 <p> Town/city </p>
 
-                <input type="text" placeholder="Town or city">
+                <input type="text" placeholder="Town or city" id="payment-rent-form__part--city" name="city">
+                <p class="payment-rent-form__part--error">ⓘ Enter a city address please.</p>
 
               </div>
 
@@ -523,17 +533,15 @@
 
                 <p> Locations </p>
 
-                <label for="payment-rent-form__chose-menu1">
+                <div id="payment-rent-form__chose-menu1" class="form-choose">
 
-                  <span> Select your city </span>
+                  <span id="pick-up-city"> Select your city </span>
 
                   <img src="img/Arrow-down2.png">
 
-                </label>
+                </div>
 
-                <input type="checkbox" id="payment-rent-form__chose-menu1">
-
-                <div class="payment-rent-form__chose-menu">
+                <div class="payment-rent-form__chose-menu form-choose-menu" id="pick-up-city-selction">
 
                   <ul>
 
@@ -546,6 +554,7 @@
                   </ul>
 
                 </div>
+                <p class="payment-rent-form__part--error">ⓘ Enter a city please.</p>
 
               </div>
 
@@ -553,17 +562,15 @@
 
                 <p> Date </p>
 
-                <label for="payment-rent-form__chose-menu2">
+                <div id="payment-rent-form__chose-menu2" class="form-choose">
 
-                  <span> Select your date </span>
+                  <span id="pick-up-date"> Select your date </span>
 
                   <img src="img/Arrow-down2.png">
 
-                </label>
+                </div>
 
-                <input type="checkbox" id="payment-rent-form__chose-menu2">
-
-                <div class="payment-rent-form__chose-menu">
+                <div class="payment-rent-form__chose-menu form-choose-menu" id="pick-up-date-selction">
 
                   <ul>
 
@@ -577,23 +584,25 @@
 
                 </div>
 
+                <p class="payment-rent-form__part--error">ⓘ Enter a data please.</p>
+
               </div>
 
               <div class="payment-rent-form__part">
 
                 <p> Time </p>
 
-                <label for="payment-rent-form__chose-menu3">
+                <div for="payment-rent-form__chose-menu3" class="form-choose">
 
-                  <span> Select your time </span>
+                  <span id="pick-up-time"> Select your time </span>
 
                   <img src="img/Arrow-down2.png">
 
-                </label>
+                </div>
 
                 <input type="checkbox" id="payment-rent-form__chose-menu3">
 
-                <div class="payment-rent-form__chose-menu">
+                <div class="payment-rent-form__chose-menu form-choose-menu" id="pick-up-time-selction">
 
                   <ul>
 
@@ -606,6 +615,8 @@
                   </ul>
 
                 </div>
+
+                <p class="payment-rent-form__part--error">ⓘ Enter a time please.</p>
 
               </div>
 
@@ -629,17 +640,17 @@
 
                 <p> Locations </p>
 
-                <label for="payment-rent-form__chose-menu4">
+                <div for="payment-rent-form__chose-menu4" class="form-choose">
 
-                  <span> Select your city </span>
+                  <span id="drop-off-city"> Select your city </span>
 
                   <img src="img/Arrow-down2.png">
 
-                </label>
+                </div>
 
                 <input type="checkbox" id="payment-rent-form__chose-menu4">
 
-                <div class="payment-rent-form__chose-menu">
+                <div class="payment-rent-form__chose-menu form-choose-menu" id="drop-off-city-selction">
 
                   <ul>
 
@@ -653,23 +664,26 @@
 
                 </div>
 
+                <p class="payment-rent-form__part--error">ⓘ Enter a city please.</p>
+
+
               </div>
 
               <div class="payment-rent-form__part">
 
                 <p> Date </p>
 
-                <label for="payment-rent-form__chose-menu5">
+                <div for="payment-rent-form__chose-menu5" class="form-choose">
 
-                  <span> Select your date </span>
+                  <span id="drop-off-date"> Select your date </span>
 
                   <img src="img/Arrow-down2.png">
 
-                </label>
+                </div>
 
                 <input type="checkbox" id="payment-rent-form__chose-menu5">
 
-                <div class="payment-rent-form__chose-menu">
+                <div class="payment-rent-form__chose-menu form-choose-menu" id="drop-off-date-selction">
 
                   <ul>
 
@@ -683,23 +697,26 @@
 
                 </div>
 
+                <p class="payment-rent-form__part--error">ⓘ Enter a data please.</p>
+
+
               </div>
 
               <div class="payment-rent-form__part">
 
                 <p> Time </p>
 
-                <label for="payment-rent-form__chose-menu6">
+                <div for="payment-rent-form__chose-menu6" class="form-choose">
 
-                  <span> Select your time </span>
+                  <span id="drop-off-time"> Select your time </span>
 
                   <img src="img/Arrow-down2.png">
 
-                </label>
+                </div>
 
                 <input type="checkbox" id="payment-rent-form__chose-menu6">
 
-                <div class="payment-rent-form__chose-menu">
+                <div class="payment-rent-form__chose-menu form-choose-menu" id="drop-off-time-selction">
 
                   <ul>
 
@@ -712,6 +729,8 @@
                   </ul>
 
                 </div>
+
+                <p class="payment-rent-form__part--error">ⓘ Enter a time please.</p>
 
               </div>
 
@@ -739,7 +758,7 @@
 
             <div class="payment-rent-form__payment-form">
 
-              <div class="payment-rent-form__all-title">
+              <div class="payment-rent-form__all-title choose-method" style="display: flex;">
 
                 <div class="payment-rent-form__title--2" style="padding: 0;">
 
@@ -756,16 +775,34 @@
                   <img src="img/visa-logo.svg">
 
                 </div>
-
               </div>
+              <label class="payment-rent-form__platform" style="display: none;">
 
-              <div class="payment-rent-form__all-part">
+                <label class="payment-rent-form__platform--chose">
+
+                  <span> &nbsp; &nbsp; &nbsp; </span>
+
+                  <p> Credit Card </p>
+
+                </label>
+
+                <div class="payment-rent-form__platform--logo">
+
+                  <img src="img/Visa-logo-text.svg" style="width: 35px !important;">
+
+                  <img src="img/visa-logo.svg" style="width: 30px !important;">
+                </div>
+
+              </label>
+
+              <div class="payment-rent-form__all-part methodForm" style="display: flex;">
 
                 <div class="payment-rent-form__part">
 
                   <p> Card Number </p>
 
-                  <input type="text" placeholder="Card number">
+                  <input type="text" placeholder="Card number" id="payment-rent-form__part--card-num">
+                  <p class="payment-rent-form__part--error">ⓘ Enter a real card number please.</p>
 
                 </div>
 
@@ -773,7 +810,8 @@
 
                   <p> Expration Date </p>
 
-                  <input type="text" placeholder="DD/MM/YY">
+                  <input type="text" placeholder="DD/MM/YY" id="payment-rent-form__part--expration-date">
+                  <p class="payment-rent-form__part--error">ⓘ Enter a real date please.</p>
 
                 </div>
 
@@ -781,7 +819,9 @@
 
                   <p> Card Holder </p>
 
-                  <input type="text" placeholder="Card holder">
+                  <input type="text" placeholder="Card holder" id="payment-rent-form__part--card-holder-name"
+                    name="name">
+                  <p class="payment-rent-form__part--error">ⓘ Enter a real name please.</p>
 
                 </div>
 
@@ -789,7 +829,9 @@
 
                   <p> CVC </p>
 
-                  <input type="text" placeholder="CVC">
+                  <input type="text" placeholder="CVC" id="payment-rent-form__part--cvc">
+                  <p class="payment-rent-form__part--error">ⓘ Enter a real CVC please.</p>
+
 
                 </div>
 
@@ -799,43 +841,96 @@
 
             <div class="payment-rent-form__payment-type">
 
-              <label class="payment-rent-form__platform">
+              <div class="payment-rent-form__payment-form">
+                <div class="payment-rent-form__all-title choose-method" style="display: none;">
 
-                <label class="payment-rent-form__platform--chose">
+                  <div class="payment-rent-form__title--2" style="padding: 0;">
 
-                  <input type="checkbox">
+                    <img src="img/circle1.png">
 
-                  <span> &nbsp; &nbsp; &nbsp; </span>
+                    <span style="padding-left: 1px;"> PayPal </span>
 
-                  <p> PayPal </p>
+                  </div>
+
+                  <div class="payment-rent-form__pick-title--2">
+
+                    <img src="img/payPal-logo.svg" style="width: 80px;">
+
+                  </div>
+                </div>
+
+                <label class="payment-rent-form__platform">
+
+                  <label class="payment-rent-form__platform--chose">
+
+                    <span> &nbsp; &nbsp; &nbsp; </span>
+
+                    <p> PayPal </p>
+
+                  </label>
+
+                  <div class="payment-rent-form__platform--logo">
+
+                    <img src="img/payPal-logo.svg">
+
+                  </div>
 
                 </label>
 
-                <div class="payment-rent-form__platform--logo">
+                <div class="payment-rent-form__all-part methodForm">
 
-                  <img src="img/payPal-logo.svg">
+                  <div class="payment-rent-form__part" style="width: 100%;">
+                    <input type="email" name="email" id="payment-rent-form__part--paypal-email"
+                      placeholder="PayPal email" style="background-color: #fff;">
+                    <p class="payment-rent-form__part--error">ⓘ Enter a real gmail please.</p>
 
+                  </div>
                 </div>
 
-              </label>
+              </div>
+              <div class="payment-rent-form__payment-form">
+                <div class="payment-rent-form__all-title choose-method" style="display: none;">
 
-              <label class="payment-rent-form__platform" style="margin: 0;">
+                  <div class="payment-rent-form__title--2" style="padding: 0;">
 
-                <label class="payment-rent-form__platform--chose">
+                    <img src="img/circle1.png">
 
-                  <input type="checkbox">
+                    <span style="padding-left: 1px;"> Bitcoin </span>
 
-                  <span> &nbsp; &nbsp; &nbsp; </span>
+                  </div>
 
-                  <p> Bitcoin </p>
+                  <div class="payment-rent-form__pick-title--2">
 
+                    <img src="img/bitcoin-logo.svg" style="width: 80px;">
+
+                  </div>
+                </div>
+                <label class="payment-rent-form__platform" style="margin: 0;">
+
+                  <label class="payment-rent-form__platform--chose">
+
+                    <span> &nbsp; &nbsp; &nbsp; </span>
+
+                    <p> Bitcoin </p>
+
+                  </label>
+
+                  <div class="payment-rent-form__platform--logo">
+
+                    <img src="img/bitcoin-logo.svg">
+
+                  </div>
                 </label>
+                <div class="payment-rent-form__all-part methodForm">
 
-                <div class="payment-rent-form__platform--logo">
-
-                  <img src="img/bitcoin-logo.svg">
-
+                  <div class="payment-rent-form__part" style="width: 100%;">
+                    <input type="text" id="payment-rent-form__part--TxID" placeholder="TxID"
+                      style="background-color: #fff;">
+                    <p class="payment-rent-form__part--error">ⓘ TxID is invalid.</p>
+                  </div>
                 </div>
+              </div>
+
 
             </div>
 
@@ -859,25 +954,32 @@
 
             </div>
 
-            <label class="payment-rent-form__confirm" style="margin-top: 30px;">
+            <div>
+              <label class="payment-rent-form__confirm" style="margin-top: 30px;">
 
-              <input type="checkbox">
+                <input type="checkbox" id="payment-rent-form__confirm1">
 
-              <span> &nbsp; &nbsp; &nbsp; </span>
+                <span> &nbsp; &nbsp; &nbsp; </span>
 
-              <p> I agree with sending an Marketing and newsletter emails.No spam,promissesd! </p>
+                <p> I agree with sending an Marketing and newsletter emails.No spam,promissesd! </p>
 
-            </label>
+              </label>
+              <p class="payment-rent-form__part--error">ⓘ Enter a agrremnt first.</p>
+            </div>
 
-            <label class="payment-rent-form__confirm">
+            <div>
+              <label class="payment-rent-form__confirm">
 
-              <input type="checkbox">
+                <input type="checkbox" id="payment-rent-form__confirm2">
 
-              <span> &nbsp; &nbsp; &nbsp; </span>
+                <span> &nbsp; &nbsp; &nbsp; </span>
 
-              <p> I agree with our terms and conditions and privacy policy. </p>
+                <p> I agree with our terms and conditions and privacy policy. </p>
 
-            </label>
+              </label>
+              <p class="payment-rent-form__part--error">ⓘ Enter a agrremnt first.</p>
+
+            </div>
 
             <div class="payment-rent-form__button">
 
@@ -901,7 +1003,7 @@
 
           </div>
 
-        </div>
+        </form>
 
         <!-- end rent form -->
 
@@ -999,7 +1101,7 @@
 
             <div>
 
-              <h5> $80.00 </h5>
+              <h5 id="about-car__total-sums"> $80.00 </h5>
 
             </div>
 
@@ -1013,7 +1115,55 @@
 
     <!-- end about car -->
 
+    <!-- Start loading -->
+    <div class="w-100 loading" id="loading" style="display: none;">
+      <img src="img/loading.gif" alt="Loading" style="width: 100px;">
+    </div>
+    <!-- End loading -->
 
+    <!--Start bill -->
+    <div class="w-100 bill-parent" style="display: none;" id="bill-parent">
+      <div class="bill mx-width">
+        <div class="bill__status-img">
+          <img src="img/check.svg" alt="">
+        </div>
+        <div class="bill__status">
+          <p>Payment Success!</p>
+        </div>
+        <div class="bill__product-price" id="bill__product-price">
+          <p> Rs.250,000.00 </p>
+        </div>
+        <div class="bill__info">
+          <div>
+            <span>Ref Number</span>
+            <span>000085752257</span>
+          </div>
+          <div>
+            <span>Payment Time</span>
+            <span class="bill__info--date" id="bill__info--date"></span>
+          </div>
+          <div>
+            <span>Payment Method</span>
+            <span id="bill__info--payment-methode">Bank Transfer</span>
+          </div>
+          <div>
+            <span>Sender Name</span>
+            <span> Ameli Syuzi </span>
+          </div>
+        </div>
+        <div class="bill__total">
+          <div>
+            <span>Amount</span>
+            <span id="bill__total--total"> Rs.250,000.00 </span>
+          </div>
+          <div>
+            <span>Admin Fee</span>
+            <span>Rs.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End bill -->
 
     <!-- start footer-->
 
@@ -1130,6 +1280,8 @@
   </div>
   <script src="js/script.js"></script>
   <script type="module" src="js/header.js"></script>
+  <script type="module" src="js/selection.js"></script>
+  <script src="js/pay.js" type="module"></script>
 </body>
 
 

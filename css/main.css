@@ -7522,6 +7522,10 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
 
 }
 
+.methodForm {
+    display: none;
+}
+
 
 
 .payment-rent-form__part p {
@@ -7533,8 +7537,8 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
 
 
 .payment-rent-form__part input[type=text],
-
-input[type=tel] {
+.payment-rent-form__part input[type=tel],
+.payment-rent-form__part input[type=email] {
 
     width: 102%;
 
@@ -7592,7 +7596,7 @@ input[type=tel] {
 
 
 
-.payment-rent-form__part label {
+.payment-rent-form__part>div:nth-child(2) {
 
     background-color: #f6f7f9;
 
@@ -7620,7 +7624,7 @@ input[type=tel] {
 
 
 
-.payment-rent-form__part label span {
+.payment-rent-form__part>div:nth-child(2) span {
 
     color: #9DADC6;
 
@@ -7726,6 +7730,13 @@ input[type=tel] {
 
     margin: 30px 0px;
 
+
+    overflow: hidden;
+
+    max-height: 1000px;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(1, 1, 1, 1);
 }
 
 
@@ -7740,6 +7751,12 @@ input[type=tel] {
 
     padding-top: 30px;
 
+}
+
+.payment-rent-form__part--error {
+    color: #3563EA;
+    font-size: 13px;
+    display: none;
 }
 
 
@@ -7793,8 +7810,6 @@ input[type=tel] {
     padding: 22px 41px;
 
     border-radius: 10px;
-
-    margin: 20px 0px;
 
     position: relative;
 
@@ -8212,6 +8227,76 @@ input[type=tel] {
 
 /* end rent form responsive */
 
+/* start payment page loading */
+.loading {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: rgba(11, 11, 11, 0.8);
+    z-index: 3;
+    width: 100%;
+}
+
+/* end payment page loading */
+
+/* start bill status */
+.bill-parent {
+    background: rgba(11, 11, 11, 0.8);
+    position: fixed;
+    top: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    width: 100%;
+}
+
+.bill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    background-color: #fff;
+    min-width: 465px;
+    border-radius: 15px;
+    padding: 30px 30px;
+    box-sizing: border-box;
+}
+
+.bill__status {
+    color: #898989;
+    font-size: 26px;
+}
+
+.bill__product-price {
+    font-size: 36px;
+    color: var(--tj-theme-primary);
+    font-weight: 700;
+}
+
+.bill__info,
+.bill__info>div,
+.bill__total,
+.bill__total>div {
+    width: 100%;
+}
+
+.bill__info>div,
+.bill__total>div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 22px;
+}
+
+.bill__info>div>span:first-child,
+.bill__total>div>span:first-child {
+    color: #707070;
+}
+
+/* end bill status */
 
 
 /* start about car */
