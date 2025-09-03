@@ -1736,6 +1736,11 @@
   <script src="js/filter2.js"></script>
   <script type="module" src="js/mobile-filter.js"></script>
   <script src="js/single-product.js"></script>
+  <script type="module">
+    // Link client to pay page
+    import { linkToPay } from "./js/link-to-pay.js";
+    linkToPay('.over-products-box__product--img img', '.over-products-box__price h3', '.over-products-box__product--name h2');
+  </script>
 </body>
 
 

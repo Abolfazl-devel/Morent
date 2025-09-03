@@ -1025,7 +1025,7 @@
 
                   </div>
 
-                  <div class="notover-products-box__rent">
+                  <div class="notover-products-box__rent rentOnPage">
 
                     <button> Rent Now </button>
 
@@ -1109,7 +1109,7 @@
 
                   </div>
 
-                  <div class="notover-products-box__rent">
+                  <div class="notover-products-box__rent rentOnPage">
 
                     <button> Rent Now </button>
 
@@ -1191,7 +1191,7 @@
 
                   </div>
 
-                  <div class="notover-products-box__rent">
+                  <div class="notover-products-box__rent rentOnPage">
 
                     <button> Rent Now </button>
 
@@ -1275,7 +1275,7 @@
 
                   </div>
 
-                  <div class="notover-products-box__rent">
+                  <div class="notover-products-box__rent rentOnPage">
 
                     <button> Rent Now </button>
 
@@ -1357,7 +1357,7 @@
 
                   </div>
 
-                  <div class="notover-products-box__rent">
+                  <div class="notover-products-box__rent rentOnPage">
 
                     <button> Rent Now </button>
 
@@ -1439,7 +1439,7 @@
 
                   </div>
 
-                  <div class="notover-products-box__rent">
+                  <div class="notover-products-box__rent rentOnPage">
 
                     <button> Rent Now </button>
 
@@ -1523,7 +1523,7 @@
 
                   </div>
 
-                  <div class="notover-products-box__rent">
+                  <div class="notover-products-box__rent rentOnPage">
 
                     <button> Rent Now </button>
 
@@ -1605,7 +1605,7 @@
 
                   </div>
 
-                  <div class="notover-products-box__rent">
+                  <div class="notover-products-box__rent rentOnPage">
 
                     <button> Rent Now </button>
 
@@ -1687,7 +1687,7 @@
 
                   </div>
 
-                  <div class="notover-products-box__rent">
+                  <div class="notover-products-box__rent rentOnPage">
 
                     <button> Rent Now </button>
 
@@ -1867,6 +1867,11 @@
   <script src="js/pick-drop-form.js" type="module"></script>
   <script src="js/filter1.js" type="module"></script>
   <script type="module" src="js/mobile-filter.js"></script>
+  <script type="module">
+    // Link client to pay page
+    import { linkToPay } from "./js/link-to-pay.js";
+    linkToPay('.notover-products-box__product--img img', '.notover-products-box__price h3', '.notover-products-box__product--name h2');
+  </script>
 </body>
 
 

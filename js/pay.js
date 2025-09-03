@@ -8,6 +8,10 @@ import { checkSelection } from "./pick-drop-form.js";
 const container = document.getElementById('continer');
 const htmlBackup = container.cloneNode(true);
 
+// Product price
+const allProductsPriceOnPage = document.getElementById('about-car__total-sums');
+
+
 
 const payForm = document.getElementById('payment-rent-forms');
 
@@ -227,7 +231,6 @@ payForm.onsubmit = function (event) {
     };
     if (checkItem) {
       const allProductsPrice = document.getElementById('bill__product-price');
-      const allProductsPriceOnPage = document.getElementById('about-car__total-sums');
       allProductsPrice.textContent = allProductsPriceOnPage.textContent;
 
       const billingLoadingImg = document.querySelector('#loading > img');
@@ -354,3 +357,19 @@ payMethods.forEach(function (aMethod, index) {
 
   };
 });
+// Choose pay method
+
+// Get data from session storage
+if (sessionStorage.getItem('productName') !== null) {
+  const productName = sessionStorage.getItem('productName');
+  const productPrice = sessionStorage.getItem('priceForRent');
+  const productImg = sessionStorage.getItem('productImgForRent');
+
+  const paymentProductName = document.getElementById('about-car__name');
+  paymentProductName.textContent = productName;
+
+  allProductsPriceOnPage.textContent = productPrice;
+
+  const paymentProductImg = document.getElementById('about-car__img');
+  paymentProductImg.src = productImg;
+};

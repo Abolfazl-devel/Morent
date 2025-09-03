@@ -834,7 +834,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -918,7 +918,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1000,7 +1000,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1084,7 +1084,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1196,7 +1196,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1278,7 +1278,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1360,7 +1360,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1442,7 +1442,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1526,7 +1526,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1608,7 +1608,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1690,7 +1690,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1772,7 +1772,7 @@
 
               </div>
 
-              <div class="home-products-box__rent">
+              <div class="home-products-box__rent rentOnPage">
 
                 <button> Rent Now </button>
 
@@ -1934,6 +1934,11 @@
   <script src="js/script.js"></script>
   <script src="js/header.js" type="module"></script>
   <script src="js/pick-drop-form.js" type="module"></script>
+  <script type="module">
+    // Link client to pay page
+    import { linkToPay } from "./js/link-to-pay.js";
+    linkToPay('.home-products-box__product--img img', '.home-products-box__price h3', '.home-products-box__product--name h2');
+  </script>
 </body>
 
 
