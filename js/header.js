@@ -19,6 +19,7 @@ function closeHeaderPops(searchFilterBox) {
   allTxtParent.style.transform = 'scale(0)';
   setting.style.display = 'none';
   profile.style.display = 'none';
+  document.body.style.overflow = 'unset';
 };
 
 const searchFilterBut = document.querySelectorAll('.search__filter');
@@ -29,6 +30,7 @@ searchFilterBut.forEach(function (but, index) {
       event.stopPropagation();
       backdrop.style.display = 'block';
       searchFilterBox[index].style.display = 'block';
+      document.body.style.overflow = 'hidden';
     };
   };
 });
@@ -121,8 +123,8 @@ wishlistButton.onclick = function (event) {
     closeHeaderPops(searchFilterBox[1]);
     wishlist.style.display = 'block';
     backdrop.style.display = 'block';
-  }
-  else {
+    document.body.style.overflow = 'hidden';
+  } else {
     closeHeaderPops(searchFilterBox[0]);
     closeHeaderPops(searchFilterBox[1]);
   };
@@ -209,6 +211,7 @@ notificattionBut.onclick = function (event) {
     closeHeaderPops(searchFilterBox[1]);
     notificattion.style.transform = 'scale(1)';
     backdrop.style.display = 'block';
+    document.body.style.overflow = 'hidden';
   } else {
     closeHeaderPops(searchFilterBox[0]);
     closeHeaderPops(searchFilterBox[1]);
@@ -257,6 +260,7 @@ settingButton.onclick = function (event) {
     closeHeaderPops(searchFilterBox[1]);
     setting.style.display = 'block';
     backdrop.style.display = 'block';
+    document.body.style.overflow = 'hidden';
   } else {
     closeHeaderPops(searchFilterBox[0]);
     closeHeaderPops(searchFilterBox[1]);
@@ -322,6 +326,7 @@ profileBut.onclick = function (e) {
     profile.style.display = 'block';
     backdrop.style.display = 'block';
     profile.style.display = 'block';
+    document.body.style.overflow = 'hidden';
   } else {
     profile.style.display = 'none';
     backdrop.style.display = 'none';
