@@ -50,7 +50,6 @@ payForm.onsubmit = function (event) {
   fetch(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=${encodeURIComponent(streetAddress.value)}&format=json`)
     .then(res => res.json())
     .then(data => {
-      console.log(data[0]);
       if (data && data.length > 0) {
         const displayName = data[0].display_name || '';
         const parts = displayName.split(',').map(p => p.trim());
