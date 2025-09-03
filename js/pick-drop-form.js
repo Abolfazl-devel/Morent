@@ -91,22 +91,44 @@ window.addEventListener('keydown', function (press) {
   function chooseOptions(selectSelction, selectOptions, selectSelectedItem) {
     let selectBox = document.querySelectorAll(selectSelction);
     let checkPickOrDrop = false;
-    if (selectSelectedItem == 'drop-off-city') {
-      selectBox = selectBox[3];
-      checkPickOrDrop = false;
-    } else {
-      selectBox = selectBox[0];
-      checkPickOrDrop = true;
+
+    switch (selectSelectedItem) {
+      case 'pick-up-city':
+        selectBox = selectBox[0];
+        break;
+      case 'pick-up-date':
+        selectBox = selectBox[1];
+        break;
+      case 'pick-up-time':
+        selectBox = selectBox[2];
+        break;
+      case 'drop-off-city':
+        selectBox = selectBox[3];
+        break;
+      case 'drop-off-date':
+        selectBox = selectBox[4];
+        break;
+      case 'drop-off-time':
+        selectBox = selectBox[5];
+        break;
     };
 
     if (selectBox.getAttribute('style')) {
       const cityItem = document.querySelectorAll(selectOptions);
       const selectedItem = document.getElementById(selectSelectedItem);
-      workingKey(cityItem, press.key, key, press, '2px solid rgb(53, 99, 234)', selectedItem, selectBox, checkPickOrDrop);
+      if (selectSelectedItem == 'pick-up-city' || selectSelectedItem == 'drop-off-city') {
+        workingKey(cityItem, press.key, key, press, '2px solid rgb(53, 99, 234)', selectedItem, selectBox, checkPickOrDrop,true);
+      } else {
+        workingKey(cityItem, press.key, key, press, '2px solid rgb(53, 99, 234)', selectedItem, selectBox, checkPickOrDrop,false);
+      };
     };
   };
   chooseOptions('.form-choose-menu', '#pick-up-city-selction li', 'pick-up-city');
+  chooseOptions('.form-choose-menu', '#pick-up-date-selction li', 'pick-up-date');
+  chooseOptions('.form-choose-menu', '#pick-up-time-selction li', 'pick-up-time');
   chooseOptions('.form-choose-menu', '#drop-off-city-selction li', 'drop-off-city');
+  chooseOptions('.form-choose-menu', '#drop-off-date-selction li', 'drop-off-date');
+  chooseOptions('.form-choose-menu', '#drop-off-time-selction li', 'drop-off-time');
 });
 
 const chageFormPosition = document.getElementById('rent-form__send-form');

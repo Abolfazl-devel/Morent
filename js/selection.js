@@ -41,10 +41,12 @@ function arrowKeys(option, key, but, borderType) {
   };
 };
 
-function workingKey(whichItems, key, lowerKey, but, borderType, selectedItem, selectBox, isPick) {
-  var checkAlphabets = /^[a-z]$/i;
-  if (checkAlphabets.test(key)) {
-    selectItem(whichItems, lowerKey, borderType);
+function workingKey(whichItems, key, lowerKey, but, borderType, selectedItem, selectBox, isPick, wordKey) {
+  if (wordKey) {
+    var checkAlphabets = /^[a-z]$/i;
+    if (checkAlphabets.test(key)) {
+      selectItem(whichItems, lowerKey, borderType);
+    };
   };
   arrowKeys(whichItems, key, but, borderType);
 
