@@ -1935,6 +1935,7 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 
     padding-left: 18px;
     min-width: 75%;
+    width: 100%;
 }
 
 
