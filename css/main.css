@@ -8249,19 +8249,6 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
 
 /* end rent form responsive */
 
-/* start payment page loading */
-.loading {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    background: rgba(11, 11, 11, 0.8);
-    z-index: 3;
-    width: 100%;
-}
-
-/* end payment page loading */
 
 /* start bill status */
 .bill-parent {
