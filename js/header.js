@@ -9,8 +9,15 @@ export { backdrop };
 import { setFilter } from "./search-filter.js";
 // Set search filter
 
-// Search filter
+// Header container
+const headerContainer = document.getElementById('w-100-header');
+// Header container
 
+// HTML element
+const HTMLEle = document.getElementsByTagName('html');
+// HTML element
+
+// Search filter
 function closeHeaderPops(searchFilterBox) {
   backdrop.style.display = 'none';
   searchFilterBox.style.display = 'none';
@@ -20,6 +27,12 @@ function closeHeaderPops(searchFilterBox) {
   setting.style.display = 'none';
   profile.style.display = 'none';
   document.body.style.overflow = 'unset';
+  mobileMenu.style.left = '-804px';
+  setTimeout(() => {
+    headerContainer.style.zIndex = 3;
+    mobileMenu.style.zIndex = 'unset';
+  }, 300);
+
 };
 
 const searchFilterBut = document.querySelectorAll('.search__filter');
@@ -345,3 +358,30 @@ closeProfile.onclick = function (event) {
   closeHeaderPops(searchFilterBox[1]);
 };
 // Profile
+
+// Mobile menu
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.onclick = function (event) {
+  event.stopPropagation();
+  headerContainer.style.zIndex = 'unset';
+  mobileMenu.style.zIndex = 3;
+  mobileMenu.style.left = '-20px';
+  setTimeout(() => {
+    backdrop.style.display = 'block';
+  }, 50);
+};
+
+mobileMenu.onclick = function (event) {
+  event.stopPropagation();
+};
+mobileMenu.style.height =  HTMLEle[0].offsetHeight + 'px';
+window.addEventListener('resize',function(){
+  mobileMenu.style.height =  HTMLEle[0].offsetHeight + 'px';  
+});
+
+const closeMobileMenu = document.getElementById('mobile-menu-close');
+closeMobileMenu.onclick = function () {
+  closeHeaderPops(searchFilterBox[0]);
+  closeHeaderPops(searchFilterBox[1]);
+};

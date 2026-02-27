@@ -628,6 +628,10 @@ input[id=dark]:checked+.continer .menu__title label {
 
 }
 
+.icon-menu>div {
+    position: relative;
+}
+
 
 
 .icon-menu img {
