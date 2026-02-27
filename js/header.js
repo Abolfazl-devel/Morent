@@ -25,7 +25,8 @@ function closeHeaderPops(searchFilterBox) {
   notificattion.style.transform = 'scale(0)';
   allTxtParent.style.transform = 'scale(0)';
   setting.style.display = 'none';
-  profile.style.display = 'none';
+  profile[0].style.display = 'none';
+  profile[1].style.display = 'none';
   document.body.style.overflow = 'unset';
   mobileMenu.style.left = '-804px';
   setTimeout(() => {
@@ -329,34 +330,34 @@ selectCrditeCard.forEach(function (but, index) {
 // Setting
 
 // Profile
-const profileBut = document.getElementById('profileButton');
-const profile = document.getElementById('profile');
-profileBut.onclick = function (e) {
-  e.stopPropagation();
-  closeHeaderPops(searchFilterBox[0]);
-  closeHeaderPops(searchFilterBox[1]);
-  if (profile.style.display == 'none') {
-    profile.style.display = 'block';
-    backdrop.style.display = 'block';
-    profile.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  } else {
-    profile.style.display = 'none';
-    backdrop.style.display = 'none';
+const profileBut = document.querySelectorAll('.user-img');
+const profile = document.querySelectorAll('.header__icon-menu--profile');
+profileBut.forEach(function (but, index) {
+  but.onclick = function (e) {
+    e.stopPropagation();
+    closeHeaderPops(searchFilterBox[0]);
+    closeHeaderPops(searchFilterBox[1]);
+    if (profile[index].style.display == 'none') {
+      profile[index].style.display = 'block';
+      backdrop.style.display = 'block';
+      profile[index].style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    } else {
+      profile[index].style.display = 'none';
+      backdrop.style.display = 'none';
+    };
   };
-};
+});
 
-profile.onclick = function (e) {
-  e.stopPropagation();
-}
+const closeProfile = document.querySelectorAll('.icon-menu--profile__close');
+closeProfile.forEach(function (but) {
+  but.onclick = function (event) {
+    event.stopPropagation();
+    closeHeaderPops(searchFilterBox[0]);
+    closeHeaderPops(searchFilterBox[1]);
+  };
+});
 
-const closeProfile = document.getElementById('icon-menu--profile__close');
-
-closeProfile.onclick = function (event) {
-  event.stopPropagation();
-  closeHeaderPops(searchFilterBox[0]);
-  closeHeaderPops(searchFilterBox[1]);
-};
 // Profile
 
 // Mobile menu
@@ -364,6 +365,8 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 mobileMenuButton.onclick = function (event) {
   event.stopPropagation();
+  profile[0].style.display = 'none';
+  profile[1].style.display = 'none';
   headerContainer.style.zIndex = 'unset';
   mobileMenu.style.zIndex = 3;
   mobileMenu.style.left = '-20px';
@@ -375,9 +378,9 @@ mobileMenuButton.onclick = function (event) {
 mobileMenu.onclick = function (event) {
   event.stopPropagation();
 };
-mobileMenu.style.height =  HTMLEle[0].offsetHeight + 'px';
-window.addEventListener('resize',function(){
-  mobileMenu.style.height =  HTMLEle[0].offsetHeight + 'px';  
+mobileMenu.style.height = HTMLEle[0].offsetHeight + 'px';
+window.addEventListener('resize', function () {
+  mobileMenu.style.height = HTMLEle[0].offsetHeight + 'px';
 });
 
 const closeMobileMenu = document.getElementById('mobile-menu-close');
@@ -385,3 +388,4 @@ closeMobileMenu.onclick = function () {
   closeHeaderPops(searchFilterBox[0]);
   closeHeaderPops(searchFilterBox[1]);
 };
+// Mobile menu
