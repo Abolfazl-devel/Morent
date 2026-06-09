@@ -8260,12 +8260,13 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
 .bill-parent {
     background: rgba(11, 11, 11, 0.8);
     position: fixed;
-    top: 0;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    top: 0px;
     z-index: 3;
     width: 100%;
+    overflow: scroll;
+    height: 100vh;
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 
 .bill {
@@ -8274,11 +8275,14 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
     align-items: center;
     gap: 25px;
     background-color: var(--tj-white);
-    min-width: 465px;
+    width: 465px;
     border-radius: 15px;
     padding: 30px 30px;
     box-sizing: border-box;
     position: relative;
+    height: fit-content;
+    overflow: visible;
+    margin: 0 auto;
 }
 
 .bill__close {

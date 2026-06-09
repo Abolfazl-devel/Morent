@@ -239,7 +239,7 @@ payForm.onsubmit = async function (event) {
       const paymentStatus = document.getElementById('bill-parent');
       setTimeout(() => {
         payLoading.style.display = 'none';
-        paymentStatus.style.display = 'flex';
+        paymentStatus.style.display = 'block';
       }, 3300);
 
 
