@@ -172,7 +172,7 @@ payForm.onsubmit = async function (event) {
         return;
       };
       const { day, month, year } = gettingDate;
-      const expiryDate = new Date(year, month - 1, day, 23, 59, 59, 999);
+      const expiryDate = new Date(year, month, day, 23, 59, 59, 999);
       const now = new Date();
       if (expiryDate > now) {
         invaildError[11].style.display = 'block';
@@ -245,7 +245,9 @@ payForm.onsubmit = async function (event) {
 
       const billDate = document.getElementById('bill__info--date');
       const allDate = new Date();
+      console.log(allDate);
       const date = [allDate.getDay(), allDate.getMonth(), allDate.getFullYear()].join('-');
+      console.log(date);
       const time = [allDate.getHours(), allDate.getMinutes(), allDate.getSeconds()].join(':');
       billDate.textContent = date + ',' + time;
 
@@ -254,12 +256,6 @@ payForm.onsubmit = async function (event) {
 
       var total = document.getElementById('bill__total--total');
       total.textContent = allProductsPriceOnPage.textContent;
-
-      setTimeout(() => {
-        paymentStatus.style.display = 'none';
-        payForm.reset();
-        container.replaceWith(htmlBackup.cloneNode(true));
-      }, 9000);
     } else {
       payLoading.style.display = 'none';
     };
@@ -268,6 +264,14 @@ payForm.onsubmit = async function (event) {
   let submitForm;
   submitForm = checkDivNoneDisplay(invaildError);
 };
+
+//Close bill
+const closeBill = document.getElementById('bill__close');
+closeBill.onclick = function () {
+  location.reload();
+  payForm.reset();
+  window.scrollTo(0, 0);
+}
 
 // Separat date
 let exprationDateLength = visaCardExpration.value.length;

@@ -8278,6 +8278,18 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
     border-radius: 15px;
     padding: 30px 30px;
     box-sizing: border-box;
+    position: relative;
+}
+
+.bill__close {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.bill__close img {
+    width: 30px;
+    cursor: pointer;
 }
 
 .bill__status {
