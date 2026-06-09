@@ -256,6 +256,7 @@ payForm.onsubmit = async function (event) {
 
       var total = document.getElementById('bill__total--total');
       total.textContent = allProductsPriceOnPage.textContent;
+      payForm.reset();
     } else {
       payLoading.style.display = 'none';
     };
@@ -269,7 +270,6 @@ payForm.onsubmit = async function (event) {
 const closeBill = document.getElementById('bill__close');
 closeBill.onclick = function () {
   location.reload();
-  payForm.reset();
   window.scrollTo(0, 0);
 }
 
