@@ -24,12 +24,17 @@ payForm.onsubmit = async function (event) {
   const payLoading = document.getElementById('loading');
   payLoading.style.display = 'flex';
   const invaildError = document.querySelectorAll('.payment-rent-form__part--error');
+
+  for (let i = 0; i <= invaildError.length - 1; i++) {
+    invaildError[i].style.display = 'none';
+  }
+
   for (let i = 0; i < checkSelection.length; i++) {
 
     if (checkSelection[i] == false) {
       invaildError[i + 4].style.display = 'block';
     };
-  }
+  };
 
 
   const firstName = document.getElementById('payment-rent-form__part--name');
