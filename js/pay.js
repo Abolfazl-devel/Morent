@@ -19,7 +19,7 @@ const visaCardExpration = document.getElementById('payment-rent-form__part--expr
 
 let savePayMethod = 'Credit Card';
 
-payForm.onsubmit = function (event) {
+payForm.onsubmit = async function (event) {
   event.preventDefault();
   const payLoading = document.getElementById('loading');
   payLoading.style.display = 'flex';
@@ -47,59 +47,54 @@ payForm.onsubmit = function (event) {
   const selectedCity = document.getElementById('payment-rent-form__part--city');
   const accessToken = 'pk.1f5c1326519fc0f8051e5f272d925692';
 
-  fetch(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=${encodeURIComponent(streetAddress.value)}&format=json`)
-    .then(res => res.json())
-    .then(data => {
-      if (data && data.length > 0) {
-        const displayName = data[0].display_name || '';
-        const parts = displayName.split(',').map(p => p.trim());
+  const addressFetch = await fetch(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=${encodeURIComponent(streetAddress.value)}&format=json`);
+  const addressResponse = await addressFetch.json();
+  if (addressResponse && addressResponse.length > 0) {
+    const displayName = addressResponse[0].display_name || '';
+    const parts = displayName.split(',').map(p => p.trim());
 
-        let city = '';
-        if (parts.length >= 3) {
-          city = parts[parts.length - 3];
-        } else if (parts.length >= 2) {
-          city = parts[parts.length - 2];
-        }
+    let city = '';
+    if (parts.length >= 3) {
+      city = parts[parts.length - 3];
+    } else if (parts.length >= 2) {
+      city = parts[parts.length - 2];
+    }
 
-        if (!city || city.toLowerCase() !== selectedCity.value.toLowerCase()) {
-          invaildError[2].style.display = 'block';
-        }
+    if (!city || city.toLowerCase() !== selectedCity.value.toLowerCase()) {
+      invaildError[2].style.display = 'block';
+    }
+  } else {
+    invaildError[2].style.display = 'block';
+  };
+
+  const cityFetch = await fetch(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=${encodeURIComponent(selectedCity.value)}&format=json&limit=1`);
+  const cityResponse = await cityFetch.json();
+  if (Array.isArray(cityResponse) && cityResponse.length > 0) {
+    const results = cityResponse[0];
+    let cityName = null;
+
+    if (results.address) {
+      cityName = results.address.city ||
+        results.address.town ||
+        results.address.village ||
+        results.address.hamlet;
+    };
+
+    if (!cityName && results.display_name) {
+      const parts = results.display_name.split(',').map(p => p.trim());
+      if (parts.length >= 3) {
+        cityName = parts[parts.length - 3];
       } else {
-        invaildError[2].style.display = 'block';
+        cityName = parts[0];
       }
-    });
+    };
 
-  fetch(`https://us1.locationiq.com/v1/search.php?key=${accessToken}&q=${encodeURIComponent(selectedCity.value)}&format=json&limit=1`)
-    .then(res => res.json())
-    .then(data => {
-      if (Array.isArray(data) && data.length > 0) {
-        const results = data[0];
-        let cityName = null;
-
-        if (results.address) {
-          cityName = results.address.city ||
-            results.address.town ||
-            results.address.village ||
-            results.address.hamlet;
-        };
-
-        if (!cityName && results.display_name) {
-          const parts = results.display_name.split(',').map(p => p.trim());
-          if (parts.length >= 3) {
-            cityName = parts[parts.length - 3];
-          } else {
-            cityName = parts[0];
-          }
-        };
-
-        if (!cityName || cityName.trim().toLowerCase() !== selectedCity.value.trim().toLowerCase()) {
-          invaildError[3].style.display = 'block';
-        };
-      } else {
-        invaildError[3].style.display = 'block';
-      };
-    });
-
+    if (!cityName || cityName.trim().toLowerCase() !== selectedCity.value.trim().toLowerCase()) {
+      invaildError[3].style.display = 'block';
+    };
+  } else {
+    invaildError[3].style.display = 'block';
+  };
 
   const cardNumber = document.getElementById('payment-rent-form__part--card-num');
   if (cardNumber.parentElement.parentElement.style.display !== 'none') {
@@ -222,12 +217,13 @@ payForm.onsubmit = function (event) {
 
   let checkDivNoneDisplay = (divs) => {
     let checkItem = true;
-    for (let i in divs.length - 1) {
+    for (let i = 0; i <= divs.length - 1; i++) {
       if (divs[i].hasAttribute('style') && divs[i].style.display !== 'none') {
         checkItem = false;
         break;
       };
     };
+
     if (checkItem) {
       const allProductsPrice = document.getElementById('bill__product-price');
       allProductsPrice.textContent = allProductsPriceOnPage.textContent;
@@ -259,6 +255,8 @@ payForm.onsubmit = function (event) {
         payForm.reset();
         container.replaceWith(htmlBackup.cloneNode(true));
       }, 9000);
+    } else {
+      payLoading.style.display = 'none';
     };
   };
 
