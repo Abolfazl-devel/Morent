@@ -245,9 +245,7 @@ payForm.onsubmit = async function (event) {
 
       const billDate = document.getElementById('bill__info--date');
       const allDate = new Date();
-      console.log(allDate);
-      const date = [allDate.getDay(), allDate.getMonth(), allDate.getFullYear()].join('-');
-      console.log(date);
+      const date = [allDate.getDate(), allDate.getMonth() +1, allDate.getFullYear()].join('-');
       const time = [allDate.getHours(), allDate.getMinutes(), allDate.getSeconds()].join(':');
       billDate.textContent = date + ',' + time;
 
