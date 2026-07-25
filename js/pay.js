@@ -243,10 +243,56 @@ payForm.onsubmit = async function (event) {
       }, 3300);
 
 
+      function beautifyingDate(p, type) {
+        if (p < 10) {
+
+          switch (type) {
+            case "day":
+              day = "0" + day;
+              break;
+
+            case "month":
+              month = "0" + month;
+              break;
+
+            case "hour":
+              hour = "0" + hour;
+              break;
+
+            case "minutes":
+              minutes = "0" + minutes;
+              break;
+
+            case "secound":
+              secound = "0" + secound;
+              break;
+          };
+
+        };
+      };
+
       const billDate = document.getElementById('bill__info--date');
       const allDate = new Date();
-      const date = [allDate.getDate(), allDate.getMonth() +1, allDate.getFullYear()].join('-');
-      const time = [allDate.getHours(), allDate.getMinutes(), allDate.getSeconds()].join(':');
+
+      let day = allDate.getDate();
+      beautifyingDate(day, "day");
+
+      let month = allDate.getMonth() + 1;
+      beautifyingDate(month, "month");
+
+
+      const date = [day, month, allDate.getFullYear()].join('-');
+
+      let hour = allDate.getHours();
+      beautifyingDate(hour, "hour");
+
+      let minutes = allDate.getMinutes();
+      beautifyingDate(minutes, "minutes");
+
+      let secound = allDate.getSeconds();
+      beautifyingDate(secound, "secound");
+
+      const time = [hour, minutes, secound].join(':');
       billDate.textContent = date + ',' + time;
 
       const paymentMethodName = document.getElementById('bill__info--payment-methode');
