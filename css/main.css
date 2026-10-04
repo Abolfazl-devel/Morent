@@ -8197,10 +8197,9 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
 
 
 
-    .payment-payment-rent-forms {
-
+    .payment-rent-forms {
         width: 100%;
-
+        margin-right: 0;
         margin-top: 40px;
 
     }
