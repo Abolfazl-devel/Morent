@@ -8262,7 +8262,7 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
     position: fixed;
     top: 0px;
     z-index: 3;
-    width: 100%;
+    width: 100dvw;
     overflow: scroll;
     height: 100vh;
     padding: 20px 0;
@@ -8725,3 +8725,15 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
 
 
 /* end about car responsive */
+
+
+/* start bill status responsive*/
+@media only screen and (max-width:429px) {
+    .bill {
+        width: 100%;
+    }
+    .bill__info > div, .bill__total > div {
+        font-size: 15px;
+    }
+}
+/* end bill status responsive*/
