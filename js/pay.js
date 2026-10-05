@@ -230,6 +230,9 @@ payForm.onsubmit = async function (event) {
       };
     };
 
+    const html = document.getElementsByTagName('html');
+    html[0].style.overflow = 'hidden';
+
     if (checkItem) {
       const allProductsPrice = document.getElementById('bill__product-price');
       allProductsPrice.textContent = allProductsPriceOnPage.textContent;
