@@ -1,4 +1,9 @@
 'use strict';
+//Global vars
+const allProductsPriceOnPage = document.getElementById('about-car__total-sums');
+//Global vars
+
+
 // Import selection check varable
 import { checkSelection } from "./pick-drop-form.js";
 // Import selection check varable
@@ -9,10 +14,6 @@ const container = document.getElementById('continer');
 const htmlBackup = container.cloneNode(true);
 
 // Product price
-const allProductsPriceOnPage = document.getElementById('about-car__total-sums');
-
-
-
 const payForm = document.getElementById('payment-rent-forms');
 
 const visaCardExpration = document.getElementById('payment-rent-form__part--expration-date');
@@ -422,4 +423,24 @@ if (sessionStorage.getItem('productName') !== null) {
 
   const paymentProductImg = document.getElementById('about-car__img');
   paymentProductImg.src = productImg;
+};
+
+// Fake dicounting with JS
+const discountButton = document.getElementById('discountButton');
+const discountInput = document.getElementById('discountIn');
+const discountCodeResult = document.getElementById('discountRes');
+discountButton.onclick = function () {
+
+  if (discountInput.value.trim().toUpperCase() == "MORENT") {
+    allProductsPriceOnPage.textContent = allProductsPriceOnPage.textContent.replace('$', '');
+    allProductsPriceOnPage.textContent = allProductsPriceOnPage.textContent.replace('.', '');
+    allProductsPriceOnPage.textContent = allProductsPriceOnPage.textContent.slice(0, -3);
+    allProductsPriceOnPage.textContent = Number(allProductsPriceOnPage.textContent) / 2;
+    allProductsPriceOnPage.textContent = `$${allProductsPriceOnPage.textContent}.00`;
+    discountCodeResult.textContent = 'The discounting code applied';
+    discountCodeResult.style.opacity = '1';
+  } else {
+    discountCodeResult.textContent = 'The code expired or does not exsist';
+    discountCodeResult.style.opacity = '1';
+  }
 };

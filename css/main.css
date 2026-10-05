@@ -8553,11 +8553,11 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
 
 
 
-.about-car__discount span {
+.about-car__discount>span {
 
     position: absolute;
 
-    bottom: -1px;
+    bottom: 37px;
 
     left: 69%;
 
@@ -8569,6 +8569,12 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
 
 }
 
+.about-car__discount div {
+    margin-top: 17px;
+    font-size: 13px;
+    color: var(--tj-theme-primery-3);
+    cursor: default;
+}
 
 
 .about-car__total-sums {
@@ -8731,8 +8737,11 @@ input[id=detali-filter-mobile]:checked+.detali-filter-mobile+.detali-filter {
     .bill {
         width: 100%;
     }
-    .bill__info > div, .bill__total > div {
+
+    .bill__info>div,
+    .bill__total>div {
         font-size: 15px;
     }
 }
+
 /* end bill status responsive*/
