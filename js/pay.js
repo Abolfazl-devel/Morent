@@ -425,6 +425,7 @@ payForm.onsubmit = async function (event) {
         payForm.reset();
       } else {
         payLoading.style.display = 'none';
+        html[0].removeAttribute('style');
       };
     };
 
