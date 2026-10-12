@@ -1,0 +1,19 @@
+/* Main color */
+:root {
+    --tj-white: #ffffff;
+    --tj-off-white: #F6F7F9;
+    --tj-black: #000000;
+    --tj-black-2: #050505;
+    --tj-gray: #9f9f9f;
+    --tj-gray-1: #727272;
+    --tj-gray-2: #838383;
+    --tj-theme-primery: #3563EA;
+    --tj-theme-primery-1: #3462E9;
+    --tj-theme-primery-2: #8FA3BE;
+    --tj-theme-primery-3: #55A6FF;
+    --tj-theme-primery-4: #9EB0C8;
+    --tj-theme-primery-5: #596781;
+    --tj-theme-primery-6: #90A4BF;
+    --tj-theme-primery-7: #8FA2C0;
+    --tj-theme-primery-8: #90A4BD;
+}
