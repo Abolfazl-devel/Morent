@@ -3332,6 +3332,428 @@ input[id=mobile-sidebar]:checked+.mobile-sidebar {
 /* end sidebar responsive */
 
 
+
+/* start details */
+
+.details {
+
+    background-color: var(--tj-white);
+
+    padding: 40px 20px;
+
+    width: 60%;
+
+    height: 73%;
+
+    margin-top: 58px;
+
+    border-radius: 10px;
+
+    margin-left: 30px;
+
+    height: fit-content;
+
+}
+
+
+
+.details__title {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.details__title h6 {
+
+    font-size: 20px;
+
+}
+
+
+
+.details__map {
+
+    margin-bottom: 30px;
+
+}
+
+
+
+.details__map iframe {
+
+    border-radius: 10px;
+
+    height: 300px;
+
+    width: 100%;
+
+}
+
+
+
+.details__product {
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+
+.details__product--img {
+
+    background-color: var(--tj-theme-primery);
+
+    background-image: url(../img/Arrow-right2.png);
+
+    border-radius: 10px;
+
+    height: 84px;
+
+    width: 27%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+.details__product--img img {
+
+    width: 90%;
+
+}
+
+
+
+.details__product--name {
+
+    width: 58%;
+
+    padding-top: 8px;
+
+    padding-left: 5px;
+
+}
+
+
+
+.details__product--name h3 {
+
+    font-size: 25px;
+
+}
+
+
+
+.details__product--name span {
+
+    font-size: 14px;
+
+    color: #3C5277;
+
+}
+
+
+
+.details__product--code {
+
+    padding-top: 13px;
+
+}
+
+
+
+.details__product--code p {
+
+    color: #3C5277;
+
+    font-size: 14px;
+
+}
+
+
+.details__total-sums {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    padding-top: 40px;
+
+}
+
+
+
+.details__total-sums div h4 {
+
+    font-size: 20px;
+
+}
+
+
+
+.details__total-sums div span {
+
+    color: var(--tj-theme-primery-6);
+
+}
+
+
+
+.details__total-sums h5 {
+
+    font-size: 35px;
+
+}
+
+
+
+/* start details animation */
+
+@keyframes fade {
+
+    0% {
+
+        opacity: 0;
+
+    }
+
+
+
+    100% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+
+/* end details animation */
+
+
+
+/*start rent form hover & checked */
+
+.details__rent-form--chose-menu li:hover {
+
+    background-color: var(--tj-theme-primery-3);
+
+    color: var(--tj-white);
+
+}
+
+
+
+.details__rent-form--chose input[type=checkbox]:checked+.details__rent-form--chose-menu {
+
+    display: flex;
+
+}
+
+
+
+/* end details hover & checked */
+
+/* end details */
+
+
+
+/* start details responsive */
+
+@media only screen and (max-width:963px) {
+
+    .details {
+
+        height: fit-content;
+
+    }
+
+
+
+    .details__rent-form--all {
+
+        flex-wrap: wrap;
+
+    }
+
+
+
+    .details__rent-form--fild {
+
+        width: 100%;
+
+        padding-right: 0 !important;
+
+        margin-right: 0;
+
+        border: none;
+
+        padding-top: 30px;
+
+    }
+
+
+
+    .details__rent-form--chose-title {
+
+        padding-bottom: 10px;
+
+    }
+
+
+
+    .details__rent-form--chose {
+
+        background-color: var(--tj-off-white);
+
+        padding: 15px 30px;
+
+        box-sizing: border-box;
+
+        border-radius: 10px;
+
+    }
+
+
+
+    .details__rent-form--chose img {
+
+        left: 25%;
+
+    }
+
+
+
+    .details__rent-form--chose-menu {
+
+        width: 100%;
+
+        background-color: var(--tj-off-white);
+
+        border: none;
+
+        border-radius: 10px;
+
+        margin-top: 23px;
+
+        left: 4%;
+
+    }
+
+
+
+    .details__rent-form--chose-menu ul {
+
+        width: 100%;
+
+        margin-left: -3px;
+
+    }
+
+
+
+    .details__rent-form--chose-menu li {
+
+        width: 102%;
+
+        box-sizing: border-box;
+
+
+
+    }
+
+}
+
+
+
+@media only screen and (max-width:950px) {
+
+    .details__total-sums div h4 {
+
+        font-size: 15px;
+
+    }
+
+
+
+    .details__total-sums div span {
+
+        font-size: 11px;
+
+    }
+
+
+
+    .details__total-sums h5 {
+
+        font-size: 25px;
+
+        padding-top: 10px;
+
+    }
+
+
+
+}
+
+
+
+@media only screen and (max-width:818px) {
+
+    .sidebar-details-statistics {
+
+        flex-direction: column;
+
+    }
+
+
+
+    .details {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+    }
+
+
+
+    .details__rent-form--chose-menu {
+
+        left: 2%;
+
+    }
+
+
+
+    .details__rent-form--chose-menu li {
+
+        width: 101%;
+
+    }
+
+}
+
+
+
+/* end details responsive */
+
+
+
 /* start statistics */
 
 .statistics {
