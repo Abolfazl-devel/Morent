@@ -12,6 +12,72 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    /* Editning rent form's part for just this page */
+    .rent-form {
+      display: block;
+      width: 100%;
+    }
+
+    .rent-form__pick-drop {
+      width: 100%;
+    }
+
+    .rent-form__title {
+      margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 1374px) {
+      .rent-form__all {
+        flex-wrap: nowrap;
+      }
+
+      .rent-form__chose span {
+        width: 71%;
+        font-size: 11px;
+      }
+
+      .rent-form__fild {
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        width: 44%;
+        margin-right: 23px !important;
+      }
+    }
+
+    @media only screen and (max-width:971px) {
+
+      .rent-form__all {
+        flex-wrap: wrap;
+      }
+
+      .rent-form__pick-drop {
+        padding: 45px 0;
+      }
+
+      .rent-form__fild {
+        width: 100%;
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        border: none;
+        padding-top: 30px;
+      }
+
+      .rent-form__chose {
+        background-color: var(--tj-off-white);
+        padding: 15px 30px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 100%;
+      }
+
+      .rent-form__chose img {
+        left: 25%;
+      }
+    }
+
+    /* Editning rent form's part for just this page */
+  </style>
+
 </head>
 
 
@@ -834,11 +900,11 @@
 
           </div>
 
-          <div class="rent-forms">
+          <div class="rent-form mx-width">
 
-            <div class="details__rent-form">
+            <div class="rent-form__pick-drop">
 
-              <div class="details__rent-form--title">
+              <div class="rent-form__title">
 
                 <img src="img/circle2.png">
 
@@ -846,27 +912,25 @@
 
               </div>
 
-              <div class="details__rent-form--all">
+              <div class="rent-form__all">
 
-                <div class="details__rent-form--fild" style="padding-right: 15px;">
+                <div class="rent-form__fild">
 
-                  <div class="details__rent-form--chose-title">
+                  <div class="rent-form__chose--title">
 
                     <h6> Locations </h6>
 
                   </div>
 
-                  <label class="details__rent-form--chose">
+                  <label class="rent-form__chose form-choose">
 
-                    <span> California </span>
+                    <span id="pick-up-city"> Select your city </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
+                    <div class="rent-form__chose-menu form-choose-menu">
 
-                    <div class="details__rent-form--chose-menu">
-
-                      <ul>
+                      <ul id="pick-up-city-selction">
 
                         <li> California </li>
 
@@ -882,25 +946,23 @@
 
                 </div>
 
-                <div class="details__rent-form--fild" style="padding-right: 13px;">
+                <div class="rent-form__fild">
 
-                  <div class="details__rent-form--chose-title">
+                  <div class="rent-form__chose--title">
 
                     <h6> Date </h6>
 
                   </div>
 
-                  <label class="details__rent-form--chose">
+                  <label class="rent-form__chose form-choose">
 
-                    <span> 2020 </span>
+                    <span id="pick-up-date"> Select your date </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
+                    <div class="rent-form__chose-menu form-choose-menu">
 
-                    <div class="details__rent-form--chose-menu">
-
-                      <ul>
+                      <ul id="pick-up-date-selction">
 
                         <li> 2020 </li>
 
@@ -916,25 +978,23 @@
 
                 </div>
 
-                <div class="details__rent-form--fild" style="border: none; margin: 0;">
+                <div class="rent-form__fild" style="border: none; margin: 0;">
 
-                  <div class="details__rent-form--chose-title">
+                  <div class="rent-form__chose--title">
 
                     <h6> Time </h6>
 
                   </div>
 
-                  <label class="details__rent-form--chose">
+                  <label class="rent-form__chose form-choose">
 
-                    <span> 8:00 AM </span>
+                    <span id="pick-up-time"> Select your time </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
+                    <div class="rent-form__chose-menu form-choose-menu">
 
-                    <div class="details__rent-form--chose-menu">
-
-                      <ul>
+                      <ul id="pick-up-time-selction">
 
                         <li> 8:00 AM </li>
 
@@ -954,9 +1014,9 @@
 
             </div>
 
-            <div class="details__rent-form" style="margin-right: 0;">
+            <div class="rent-form__pick-drop">
 
-              <div class="details__rent-form--title">
+              <div class="rent-form__title">
 
                 <img src="img/circle1.png">
 
@@ -964,27 +1024,25 @@
 
               </div>
 
-              <div class="details__rent-form--all">
+              <div class="rent-form__all">
 
-                <div class="details__rent-form--fild" style="padding-right: 15px;">
+                <div class="rent-form__fild">
 
-                  <div class="details__rent-form--chose-title">
+                  <div class="rent-form__chose--title">
 
                     <h6> Locations </h6>
 
                   </div>
 
-                  <label class="details__rent-form--chose">
+                  <label class="rent-form__chose form-choose">
 
-                    <span> California </span>
+                    <span id="drop-off-city"> Select your city </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
+                    <div class="rent-form__chose-menu form-choose-menu">
 
-                    <div class="details__rent-form--chose-menu">
-
-                      <ul>
+                      <ul id="drop-off-city-selction">
 
                         <li> California </li>
 
@@ -1000,25 +1058,23 @@
 
                 </div>
 
-                <div class="details__rent-form--fild" style="padding-right: 13px;">
+                <div class="rent-form__fild">
 
-                  <div class="details__rent-form--chose-title">
+                  <div class="rent-form__chose--title">
 
                     <h6> Date </h6>
 
                   </div>
 
-                  <label class="details__rent-form--chose">
+                  <label class="rent-form__chose form-choose">
 
-                    <span> 2022 </span>
+                    <span id="drop-off-date"> Select your date </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
+                    <div class="rent-form__chose-menu form-choose-menu">
 
-                    <div class="details__rent-form--chose-menu">
-
-                      <ul>
+                      <ul id="drop-off-date-selction">
 
                         <li> 2020 </li>
 
@@ -1034,25 +1090,23 @@
 
                 </div>
 
-                <div class="details__rent-form--fild" style="border: none; margin: 0;">
+                <div class="rent-form__fild" style="border: none;margin: 0;">
 
-                  <div class="details__rent-form--chose-title">
+                  <div class="rent-form__chose--title">
 
                     <h6> Time </h6>
 
                   </div>
 
-                  <label class="details__rent-form--chose">
+                  <label class="rent-form__chose form-choose">
 
-                    <span> 4:00 PM </span>
+                    <span id="drop-off-time"> Select your time </span>
 
                     <img src="./img/Arrow-down.png">
 
-                    <input type="checkbox">
+                    <div class="rent-form__chose-menu form-choose-menu">
 
-                    <div class="details__rent-form--chose-menu">
-
-                      <ul>
+                      <ul id="drop-off-time-selction">
 
                         <li> 8:00 AM </li>
 
@@ -1332,5 +1386,6 @@
 <script src="js/script.js"></script>
 <script src="js/sider-bar.js"></script>
 <script src="js/header.js"></script>
+<script src="js/pick-drop-form.js" type="module"></script>
 
 </html>
