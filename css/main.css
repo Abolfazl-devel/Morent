@@ -3132,7 +3132,7 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 
 
 
-label[for=mobile-sidebar] {
+.mobile-sidebar-buttons {
 
     position: absolute;
 
@@ -3146,20 +3146,11 @@ label[for=mobile-sidebar] {
 
 
 
-label[for=mobile-sidebar] img {
+.mobile-sidebar-buttons img {
 
     width: 40px;
 
 }
-
-
-
-input[id=mobile-sidebar] {
-
-    display: none;
-
-}
-
 
 
 .mobile-sidebar {
@@ -3190,13 +3181,14 @@ input[id=mobile-sidebar] {
 
 
 
-.menu__title label {
+#mobile-sidebar-close {
 
     position: absolute;
 
-    top: -14px;
+    top: 0;
 
-    right: -199px;
+    right: 30px;
+
 
 }
 
@@ -3272,29 +3264,6 @@ input[id=mobile-sidebar] {
 
 
 /* end sidebar hover */
-
-
-
-/* start sidebar checked */
-
-input[id=dark]:checked+.continer .sidebar__menu div div div img:last-child {
-
-    opacity: 1;
-
-}
-
-
-
-input[id=mobile-sidebar]:checked+.mobile-sidebar {
-
-    left: 0;
-
-}
-
-
-
-/* end sidebar checked */
-
 /*end sidebar */
 
 
@@ -3311,7 +3280,7 @@ input[id=mobile-sidebar]:checked+.mobile-sidebar {
 
 
 
-    label[for=mobile-sidebar] {
+    .mobile-sidebar-buttons {
 
         display: block;
 

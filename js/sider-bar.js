@@ -9,9 +9,27 @@ const desktopSiderbarItemsText = document.querySelectorAll('.menu__item span');
 const desktopSiderbarItemsImages = document.querySelectorAll('.menu__item img:nth-child(2)');
 
 //Mobile siderbar
+const mobileSidebar = document.getElementById('mobile-sidebar');
 const mobileSidebarItems = document.querySelectorAll('.mobile-menu__item');
 const mobileSidebarItemsText = document.querySelectorAll('.mobile-menu__item span');
 const mobileSidebarItemsImages = document.querySelectorAll('.mobile-menu__item img:nth-child(2)');
+const mobileSidebarOpenButton = document.getElementById('mobile-sidebar-open');
+const mobileSidebarCloseButton = document.getElementById('mobile-sidebar-close');
+
+
+//Opening and closing mobile sidebar
+mobileSidebarOpenButton.onclick = function () {
+  if (mobileSidebar.style.left == '-300px') {
+    mobileSidebar.style.left = 0;
+  } else {
+    mobileSidebar.style.left = '-300px';
+  };
+};
+
+mobileSidebarCloseButton.onclick = function () {
+  mobileSidebar.style.left = '-300px';
+};
+
 
 function activingSidebarItems(items1, items2, image1, image2, text1, text2) {
 
