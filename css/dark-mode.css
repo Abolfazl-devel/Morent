@@ -1,5 +1,6 @@
 /* Admin dashboard's dark mode */
-.dark-mode .continer {
+.dark-mode .continer,
+.dark-mode .continer .rent-form__chose-menu {
     background-color: var(--tj-black-2);
 }
 
@@ -64,6 +65,7 @@
     border: none;
 }
 
+
 .dark-mode .continer .transaction__product-price {
     border-bottom: 1px solid var(--tj-white);
 }
@@ -75,8 +77,8 @@
 
 @media only screen and (max-width:963px) {
 
-    .dark-mode .continer .rent-form__fild,
-    .dark-mode .continer .rent-form__chose {
+    .dark-mode .continer .rent-form__chose,
+    .dark-mode .continer .rent-form__chose-menu {
         background-color: var(--tj-black-2);
     }
 }
