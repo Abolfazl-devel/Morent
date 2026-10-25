@@ -48,8 +48,8 @@
 
 .dark-mode .continer .details__title h6,
 .dark-mode .continer .details__product--name h3,
-.dark-mode .continer .details__rent-form--title h5,
-.dark-mode .continer .details__rent-form--chose-title h6,
+.dark-mode .continer .rent-form__title h5,
+.dark-mode .continer .rent-form__chose--title h6,
 .dark-mode .continer .details__total-sums h4,
 .dark-mode .continer .details__total-sums h5,
 .dark-mode .continer .top-products__title h5,
@@ -60,7 +60,7 @@
 
 }
 
-.dark-mode .continer .details__rent-form--chose-menu {
+.dark-mode .continer .rent-form__fild {
     border: none;
 }
 
@@ -75,8 +75,8 @@
 
 @media only screen and (max-width:963px) {
 
-    .dark-mode .continer .details__rent-form--chose,
-    .dark-mode .continer .details__rent-form--chose-menu {
+    .dark-mode .continer .rent-form__fild,
+    .dark-mode .continer .rent-form__chose {
         background-color: var(--tj-black-2);
     }
 }
