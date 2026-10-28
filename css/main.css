@@ -4136,21 +4136,6 @@ input[id=filter-mobile]:checked+.filter-mobile+.filter {
 }
 
 
-
-/* start statistics checked */
-
-input[id=statistics]:checked+.top-products__statistics {
-
-    display: flex;
-
-}
-
-
-
-/* end statistics checked */
-
-
-
 /* start statistics animation */
 
 @keyframes statistics {
