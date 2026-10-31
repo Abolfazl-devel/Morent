@@ -15,7 +15,9 @@
 .dark-mode .continer .details__rent-form--chose-menu,
 .dark-mode .continer .top-products,
 .dark-mode .continer .transaction,
-.dark-mode .continer .menu__title div {
+.dark-mode .continer .menu__title div,
+.dark-mode .continer .search__filters,
+.dark-mode .continer .search__filters input {
     background-color: var(--tj-black);
 }
 
@@ -56,7 +58,9 @@
 .dark-mode .continer .top-products__title h5,
 .dark-mode .continer .top-products__pie-chart h6,
 .dark-mode .continer .transaction__title h3,
-.dark-mode .continer .transaction__product-price h6 {
+.dark-mode .continer .transaction__product-price h6,
+.dark-mode .continer .search__filters input,
+.dark-mode .continer .search__filters>div>div>span {
     color: var(--tj-white);
 
 }
@@ -89,6 +93,15 @@
 
 .continer .sidebar__menu .dark-active div img:last-child {
     opacity: 1;
+}
+
+.dark-mode .continer .search__filters>div>div>span:hover {
+    color: var(--tj-theme-primery);
+}
+
+.dark-mode .continer .search__filters input:focus-visible {
+    outline: 2px solid var(--tj-theme-primery);
+    border: none;
 }
 
 /* Admin dashboard's dark mode */
