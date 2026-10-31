@@ -335,9 +335,9 @@ const profile = document.querySelectorAll('.header__icon-menu--profile');
 profileBut.forEach(function (but, index) {
   but.onclick = function (e) {
     e.stopPropagation();
-    closeHeaderPops(searchFilterBox[0]);
-    closeHeaderPops(searchFilterBox[1]);
     if (profile[index].style.display == 'none') {
+      closeHeaderPops(searchFilterBox[0]);
+      closeHeaderPops(searchFilterBox[1]);
       profile[index].style.display = 'block';
       backdrop.style.display = 'block';
       profile[index].style.display = 'block';
