@@ -1128,7 +1128,8 @@ input[id=mobile-menu]:checked+.mobile-menu {
 
 
 
-.footer__our-call p {
+.footer__our-call a {
+    display: block;
 
     color: var(--tj-gray-2);
 
@@ -1257,15 +1258,6 @@ input[id=mobile-menu]:checked+.mobile-menu {
     justify-content: space-between;
 
 }
-
-
-
-.about-designer__work span {
-
-    cursor: pointer;
-
-}
-
 
 
 .about-designer-mobile {
